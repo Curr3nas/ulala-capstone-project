@@ -67,11 +67,6 @@ form {
   background-color: gray;
 }
 
-
-.div1 {
-  margin-top: 40px;
-}
-
 section {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -111,7 +106,7 @@ li {
 p {
   margin-top: 5px;
   margin-bottom: 5px;
-  width: 85vw;
+  max-width: 85vw;
 }
 
 dd {
@@ -128,3 +123,28 @@ h1.unlock {
   margin-bottom: 15px;
 }
 
+.saved {
+  display: flex;
+  flex-direction: column;
+}
+
+div.saved section, div.start section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.classes section {
+  padding-left: 10vw;
+  padding-right: 5vw;
+}
+
+.forms {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forms section h2 {
+  text-align: center;
+}

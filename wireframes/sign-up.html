@@ -12,16 +12,17 @@
     <a href="/ulala-capstone-project/wireframes/start-page.html">Start Page</a>
     <a href="/ulala-capstone-project/wireframes/faq-page.html">FAQ</a>
     <a href="/ulala-capstone-project/wireframes/unlock-at-level.html">Unlock at Level</a>
-    <a href="/ulala-capstone-project/wireframes/sign-up.html">Sign Up</a>
-    <a href="/ulala-capstone-project/wireframes/log-in.html">Log In</a>
+    <a href="/ulala-capstone-project/wireframes/sign-up.html">Sign Up/Login</a>
   </nav>
   <main>
     <header>
-      <h1>Sign Up</h1>
+      <h1>Sign Up/Login</h1>
     </header>
     <!--In production, the button will be a part of the form and will authenticate the sign up
         and take you to your saved character page-->
-    <div>
+    <div class="forms gray">
+      <section>
+        <h2>Sign Up</h2>
       <form>
         <label for="username">Username: </label>
         <input type="text" name="username" id="username" placeholder="username">
@@ -29,6 +30,19 @@
         <input type="password" name="password" id="password" placeholder="password">
       </form>
       <a href="/ulala-capstone-project/wireframes/saved-characters.html" class="form"><button>Submit</button></a>
+      </section>
+    </div>
+    <div class="forms">
+      <section>
+        <h2>Login</h2>
+        <form>
+          <label for="username">Username: </label>
+          <input type="text" name="username" id="username" placeholder="username">
+          <label for="password">Password: </label>
+          <input type="password" name="password" id="password" placeholder="password">
+        </form>
+        <a href="/ulala-capstone-project/wireframes/saved-characters.html" class="form"><button>Submit</button></a>
+      </section>
     </div>
   </main>
 </body>
