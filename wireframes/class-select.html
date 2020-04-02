@@ -4,80 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"
+    type="text/css" />
+    <link href="../styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
   <nav class="nav">
-    <ul>
-      <li>
-        Page 1
-      </li>
-      <li>
-        Page 2
-      </li>
-      <li>
-        Page 3
-      </li>
-    </ul>
+    <a href="start-page.html">Start Page</a>
+    <a href="faq-page.html">FAQ</a>
+    <a href="unlock-at-level.html">Unlock at Level</a>
+    <a href="sign-up.html">Sign Up</a>
+    <a href="log-in.html">Log In</a>
   </nav>
+  <main>
   <header>
     <h1>Choose Your Class</h1>
   </header>
+  <!--When you click on an image, it will take you to class-page.html,
+    eventually this will be class specific (the skills, attributes, clatters, 
+    tempers, basically everything on the class page will be class specific-->
+
   <!--This div will show if roleSelected=tank-->
-  <div class="tank" name="tankClasses">
-    <section class="warrior">
-      <p>
-        [placeholder for image]
-      </p>
+  <div class="tank div1" name="tankClasses">
+    <section class="warrior gray">
+      <a href="/wireframes/class-page.html">
+        <p>
+          [placeholder for image]
+        </p>
+      </a>
       <h2>Warrior</h2>
       <p>Armed with a huge battle hammer, Warriors can deal fatal blows to the enemy in front of them.</p>
     </section>
     <section class="gladiator">
-      <p>[placeholder for image]</p>
+      <a href="/wireframes/class-page.html">
+        <p>
+          [placeholder for image]
+        </p>
+      </a>
       <h2>Gladiator</h2>
       <p>Armed with two blades, Gladiators fight on the front lines. The most trustworthy members in a team, they always lead the charge in combat.</p>
     </section>
   </div>
   <!--This div will show if roleSelected=healer-->
   <div class="healer" name="healerClasses">
-    <section class="druid">
-      <p>
-        [placeholder for image]
-      </p>
+    <section class="druid gray">
+      <a href="/wireframes/class-page.html">
+        <p>
+          [placeholder for image]
+        </p>
+      </a>
       <h2>Druid</h2>
       <p>Druids are messengers of nature, specialized in shapshifting and the use of natural forces in curing teammates.</p>
     </section>
     <section class="shaman">
-      <p>[placeholder for image]</p>
+      <a href="/wireframes/class-page.html">
+        <p>
+          [placeholder for image]
+        </p>
+      </a>
       <h2>Shaman</h2>
       <p>Shamans are doubtlessly the most popular ones in a team. With mighty cohesive force and a Heal power, they are also able to summon different totems.</p>
     </section>
   </div>
   <!--This div will show if roleSelected=dps-->
   <div class="dps" name="dpsClasses">
-    <section class="mage">
-      <p>
-        [placeholder for image]
-      </p>
+    <section class="mage gray">
+      <a href="/wireframes/class-page.html">
+        <p>
+          [placeholder for image]
+        </p>
+      </a>
       <h2>Mage</h2>
       <p>A mage is highly talented with the ability to use the power of arcane at will and trick the enemy with ease.</p>
     </section>
     <section class="warlock">
-      <p>[placeholder for image]</p>
+      <a href="/wireframes/class-page.html">
+        <p>
+          [placeholder for image]
+        </p>
+      </a>
       <h2>Warlock</h2>
       <p>Warlocks can control the fire element freely and use the force of flame to surround the enemy with a deluge of fire.</p>
     </section>
-    <section class="assassin">
-      <p>
-        [placeholder for image]
-      </p>
+    <section class="assassin gray">
+      <a href="/wireframes/class-page.html">
+        <p>
+          [placeholder for image]
+        </p>
+      </a>
       <h2>Assassin</h2>
       <p>Best known for their strong build and vigorous moves, Assassins can travel bak and forth on the battlefield agilely. Armed with two daggers, they aim for the enemy's weak point and strike fiercely.</p>
     </section>
     <section class="hunter">
-      <p>[placeholder for image]</p>
+      <a href="/wireframes/class-page.html">
+        <p>
+          [placeholder for image]
+        </p>
+      </a>
       <h2>Hunter</h2>
       <p>Hunters use bow and arrows as their weapon of choice. They know to keep distance from their enemy so they can fire at the enemy's weak point from their own safety.</p>
     </section>
   </div>
+  </main>
 </body>
 </html>
