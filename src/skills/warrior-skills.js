@@ -1,4 +1,4 @@
-let warriorSkills = [
+export let warriorSkills = [
   {
     name: "Resolution",
     rarity: "Normal",
@@ -18,7 +18,7 @@ let warriorSkills = [
     rarity: "Normal",
     type: false,
     description: "Gain a Thorn Shield of 18%(+15) Armor for 12 seconds. When the shield breaks, inflict 72%(+96) ATK DMG on the enemy unit in front of it",
-    img: "../ulala-media/warrior-skill-thumbnails/60px-Bramble_shield.ong"
+    img: "../ulala-media/warrior-skill-thumbnails/60px-Bramble_shield.png"
   },
   {
     name: "Fearless Shield",
@@ -67,7 +67,7 @@ let warriorSkills = [
     rarity: "Normal",
     type: false,
     description: "Gain a shield with 17%(+14) Armor and take 40% DMG received by the teammate with the lowest HP upon every attack for 12 seconds",
-    img: "../ulala-media/warrior-skill-thumbnails/60px-Safeguard"
+    img: "../ulala-media/warrior-skill-thumbnails/60px-Safeguard.png"
   },
   {
     name: "Giant's Return",
@@ -137,6 +137,6 @@ let warriorSkills = [
     rarity: "Normal",
     type: false,
     description: "Inflice 38%(+51) ATK DMG to the enemy. If in the Overwhelming Assault state, the attack will aim at the enemy unit with the lowest HP, and the target will be pulled over and stunned for 0.6 seconds (The Pulled effect has a 100% hit rate for enemy units at Lv10 or lower)",
-    img: "../ulala-media/warrior-skill-thumbnails/60px-"
+    img: "../ulala-media/warrior-skill-thumbnails/60px-Come_here.png"
   },
 ];

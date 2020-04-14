@@ -5,28 +5,98 @@ import { assassinSkills } from '../skills/assassin-skills'
 import { druidSkills } from '../skills/druid-skills'
 import { hunterSkills } from '../skills/hunter-skills'
 import { gladSkills } from '../skills/glad-skills'
+import { shamanSkills } from '../skills/shaman-skills'
+import { warriorSkills } from '../skills/warrior-skills'
+import { mageSkills } from '../skills/mage-skills'
+import { warlockSkills } from '../skills/warlock-skills'
 
 
 class ClassPage extends React.Component {
+  // eslint-disable-next-line no-useless-constructor
+  constructor(props) {
+    super(props)
+  }
   
   state = {
-    selected: false
+    selected: [],
+    name: ''
   }
 
-  render() {
+  componentDidMount = () => {
+    if(this.props.location.pathname === "/Assassin") {
+      this.setState({
+        selected: assassinSkills,
+        name: "Assassin"
+      })
+    }
 
+    if(this.props.location.pathname === "/Druid") {
+      this.setState({
+        selected: druidSkills,
+        name: "Druid"
+      })
+    }
+
+    if(this.props.location.pathname === "/Hunter") {
+      this.setState({
+        selected: hunterSkills,
+        name: "Hunter"
+      })
+    }
+
+    if(this.props.location.pathname === "/Shaman") {
+      this.setState({
+        selected: shamanSkills,
+        name: "Shaman"
+      })
+    }
+
+    if(this.props.location.pathname === "/Gladiator") {
+      this.setState({
+        selected: gladSkills,
+        name: "Gladiator"
+      })
+    }
+
+    if(this.props.location.pathname === "/Warlock") {
+      this.setState({
+        selected: warlockSkills,
+        name: "Warlock"
+      })
+    }
+
+    if(this.props.location.pathname === "/Warrior") {
+      this.setState({
+        selected: warriorSkills,
+        name: "Warrior"
+      })
+    }
+
+    if(this.props.location.pathname === "/Mage") {
+      this.setState({
+        selected: mageSkills,
+        name: "Mage"
+      })
+    }
+  } 
+
+  render() {
+    let currentClass = this.state.selected
+    let currentName = this.state.name
+    console.log(currentClass)
     return (
       <>
-        <div class="classes">
-          <section class="skills gray">
-            <h2 class="skills">Skills</h2>
-            <button class="legendary">Legendary Only</button>
-            <button class="recommended">Recommended Only</button>
+        <div className="class">
+          <h1>{currentName}</h1>
+          <section>
+            <h2>Skills</h2>
+            <button className="legendary">Legendary Only</button>
+            <button className="recommended">Recommended Only</button>
             <ul>
-              {gladSkills.map(skill => {
+              {currentClass.map((skill, idx) => {
                 if (skill.type) {
                           return (
-                            <li>
+                            <li key={skill[idx]}>
                               <h3>{skill.name}</h3>
                               <img src={skill.img} alt='skill photo'></img>
                               <p>{skill.rarity}</p>
@@ -36,7 +106,7 @@ class ClassPage extends React.Component {
                           )
                       } else { 
                         return (
-                          <li>
+                          <li id={skill[idx]}>
                             <h3>{skill.name}</h3>
                             <img src={skill.img} alt='skill photo'></img>
                             <p>{skill.rarity}</p>
@@ -48,7 +118,7 @@ class ClassPage extends React.Component {
             }
             </ul>
           </section>
-          <section class="attributes">
+          <section className="attributes">
             <h2>Attributes</h2>
             <ul>
               <li>
@@ -80,7 +150,7 @@ class ClassPage extends React.Component {
               </li>
             </ul>
           </section>
-          <section class="wish gray">
+          <section className="wish">
             <h2>Wishing Well</h2>
             <p>You earn coins to throw into the wishing well by completing all five daily quests that are provided to you each day. It can take as long as 34 days to fill you wish meter enough to earn the legendary version of the skill you are wishing for. It usually will not take this long.</p>
             <p>You should prioritize these skills from the wishing well. If you already have a legendary version of the skill, move on to the next skill in the list. Once you have obtained the legendary version of all these skills, feel free to prioritize the skills in any order you wish.</p>
@@ -99,9 +169,9 @@ class ClassPage extends React.Component {
               </li>
             </ol>
           </section>
-          <section class="temper">
+          <section className="temper">
             <h2>Tempers</h2>
-            <button class="recommendedTemper">Recommended Tempers</button>
+            <button className="recommendedTemper">Recommended Tempers</button>
             <dl>
               <dt>temper name</dt>
               <dd>temper description</dd>
@@ -111,9 +181,9 @@ class ClassPage extends React.Component {
               <dd>temper description</dd>
             </dl>  
           </section>
-          <section class="clatter gray">
+          <section className="clatter">
             <h2>Clatter Cards</h2>
-            <button class="recommendedClatter">Recommended Cards</button>
+            <button className="recommendedClatter">Recommended Cards</button>
             <ul>
               <li>
                 <h3>Clatter card name</h3>
