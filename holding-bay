@@ -8,3 +8,32 @@
     threeStar: "3 star:",
     img: "../ulala-media/clatter-card-icons/.jpg"
   },
+
+
+  <li>
+                <h3>Class specific attribute</h3>
+                <p>This attribute affects these stats:</p>
+                <ul>
+                  <li>stat: what stat does</li>
+                  <li>stat: what stat does</li>
+                </ul>
+                <p>You should put (x) points per level in this attribute</p>
+              </li>
+              <li>
+                <h3>Stam attribute</h3>
+                <p>This attribute affects these stats:</p>
+                <ul>
+                  <li>stat: what stat does</li>
+                  <li>stat: what stat does</li>
+                </ul>
+                <p>You should put (x) points per level in this attribute</p>
+              </li>
+              <li>
+                <h3>Tech attribute</h3>
+                <p>This attribute affects these stats:</p>
+                <ul>
+                  <li>stat: what stat does</li>
+                  <li>stat: what stat does</li>
+                </ul>
+                <p>You should put (x) points per level in this attribute</p>
+              </li>

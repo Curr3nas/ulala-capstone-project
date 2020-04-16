@@ -3,8 +3,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { assassinSkills, druidSkills, gladSkills, hunterSkills, mageSkills, shamanSkills, warlockSkills, warriorSkills } from '../skills/skills'
 import SkillList from './SkillList'
-import { clatters } from '../clatters/clatters'
-
+import { clatters } from '../Clatters/Clatters'
+import { assassinAttributes, druidAttributes, gladAttributes, hunterAttributes, mageAttributes, shamanAttributes, warlockAttributes, warriorAttributes } from '../Attributes/ClassAttributes'
 
 class ClassPage extends React.Component {
   // eslint-disable-next-line no-useless-constructor
@@ -14,63 +14,72 @@ class ClassPage extends React.Component {
   
   state = {
     skills: [],
-    name: ''
+    name: '',
+    attributes: []
   }
 
   componentDidMount = () => {
     if(this.props.location.pathname === "/Assassin") {
       this.setState({
         skills: assassinSkills,
-        name: "Assassin"
+        name: "Assassin",
+        attributes: assassinAttributes
       })
     }
 
     if(this.props.location.pathname === "/Druid") {
       this.setState({
         skills: druidSkills,
-        name: "Druid"
+        name: "Druid",
+        attributes: druidAttributes
       })
     }
 
     if(this.props.location.pathname === "/Hunter") {
       this.setState({
         skills: hunterSkills,
-        name: "Hunter"
+        name: "Hunter",
+        attributes: hunterAttributes
       })
     }
 
     if(this.props.location.pathname === "/Shaman") {
       this.setState({
         skills: shamanSkills,
-        name: "Shaman"
+        name: "Shaman",
+        attributes: shamanAttributes
       })
     }
 
     if(this.props.location.pathname === "/Gladiator") {
       this.setState({
         skills: gladSkills,
-        name: "Gladiator"
+        name: "Gladiator",
+        attributes: gladAttributes
       })
     }
 
     if(this.props.location.pathname === "/Warlock") {
       this.setState({
         skills: warlockSkills,
-        name: "Warlock"
+        name: "Warlock",
+        attributes: warlockAttributes
       })
     }
 
     if(this.props.location.pathname === "/Warrior") {
       this.setState({
         skills: warriorSkills,
-        name: "Warrior"
+        name: "Warrior",
+        attributes: warriorAttributes
       })
     }
 
     if(this.props.location.pathname === "/Mage") {
       this.setState({
         skills: mageSkills,
-        name: "Mage"
+        name: "Mage",
+        attributes: mageAttributes
       })
     }
   } 
@@ -78,6 +87,7 @@ class ClassPage extends React.Component {
   render() {
     let currentSkills = this.state.skills
     let currentName = this.state.name
+    let currentAttributes = this.state.attributes
     return (
       <>
         <div className="class">
@@ -90,35 +100,22 @@ class ClassPage extends React.Component {
             </ul>
           </section>
           <section className="attributes">
-            <h2>Attributes</h2>
+            <h2>{currentName} Attributes</h2>
             <ul>
-              <li>
-                <h3>Class specific attribute</h3>
-                <p>This attribute affects these stats:</p>
-                <ul>
-                  <li>stat: what stat does</li>
-                  <li>stat: what stat does</li>
-                </ul>
-                <p>You should put (x) points per level in this attribute</p>
-              </li>
-              <li>
-                <h3>Stam attribute</h3>
-                <p>This attribute affects these stats:</p>
-                <ul>
-                  <li>stat: what stat does</li>
-                  <li>stat: what stat does</li>
-                </ul>
-                <p>You should put (x) points per level in this attribute</p>
-              </li>
-              <li>
-                <h3>Tech attribute</h3>
-                <p>This attribute affects these stats:</p>
-                <ul>
-                  <li>stat: what stat does</li>
-                  <li>stat: what stat does</li>
-                </ul>
-                <p>You should put (x) points per level in this attribute</p>
-              </li>
+              {currentAttributes.map(attribute => {
+                return (
+                  <li>
+                    <h3>{attribute.name}</h3>
+                    <p>{attribute.desc}</p>
+                    <ul>
+                      <li>{attribute.statOne}</li>
+                      <li>{attribute.statTwo}</li>
+                      <li>{attribute.statThree}</li>
+                    </ul>
+                    <p>{attribute.allocation}</p>
+                  </li>
+                )
+              })}
             </ul>
           </section>
           <section className="wish">
@@ -141,7 +138,7 @@ class ClassPage extends React.Component {
             </ol>
           </section>
           <section className="temper">
-            <h2>Tempers</h2>
+            <h2>{currentName} Tempers</h2>
             <button className="recommendedTemper">Recommended Tempers</button>
             <dl>
               <dt>temper name</dt>
