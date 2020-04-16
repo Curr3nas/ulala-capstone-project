@@ -1,14 +1,9 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { assassinSkills } from '../skills/assassin-skills'
-import { druidSkills } from '../skills/druid-skills'
-import { hunterSkills } from '../skills/hunter-skills'
-import { gladSkills } from '../skills/glad-skills'
-import { shamanSkills } from '../skills/shaman-skills'
-import { warriorSkills } from '../skills/warrior-skills'
-import { mageSkills } from '../skills/mage-skills'
-import { warlockSkills } from '../skills/warlock-skills'
+import { assassinSkills, druidSkills, gladSkills, hunterSkills, mageSkills, shamanSkills, warlockSkills, warriorSkills } from '../skills/skills'
+import SkillList from './SkillList'
+import { clatters } from '../clatters/clatters'
 
 
 class ClassPage extends React.Component {
@@ -18,104 +13,80 @@ class ClassPage extends React.Component {
   }
   
   state = {
-    selected: [],
+    skills: [],
     name: ''
   }
 
   componentDidMount = () => {
     if(this.props.location.pathname === "/Assassin") {
       this.setState({
-        selected: assassinSkills,
+        skills: assassinSkills,
         name: "Assassin"
       })
     }
 
     if(this.props.location.pathname === "/Druid") {
       this.setState({
-        selected: druidSkills,
+        skills: druidSkills,
         name: "Druid"
       })
     }
 
     if(this.props.location.pathname === "/Hunter") {
       this.setState({
-        selected: hunterSkills,
+        skills: hunterSkills,
         name: "Hunter"
       })
     }
 
     if(this.props.location.pathname === "/Shaman") {
       this.setState({
-        selected: shamanSkills,
+        skills: shamanSkills,
         name: "Shaman"
       })
     }
 
     if(this.props.location.pathname === "/Gladiator") {
       this.setState({
-        selected: gladSkills,
+        skills: gladSkills,
         name: "Gladiator"
       })
     }
 
     if(this.props.location.pathname === "/Warlock") {
       this.setState({
-        selected: warlockSkills,
+        skills: warlockSkills,
         name: "Warlock"
       })
     }
 
     if(this.props.location.pathname === "/Warrior") {
       this.setState({
-        selected: warriorSkills,
+        skills: warriorSkills,
         name: "Warrior"
       })
     }
 
     if(this.props.location.pathname === "/Mage") {
       this.setState({
-        selected: mageSkills,
+        skills: mageSkills,
         name: "Mage"
       })
     }
   } 
 
   render() {
-    let currentClass = this.state.selected
+    let currentSkills = this.state.skills
     let currentName = this.state.name
-    console.log(currentClass)
     return (
       <>
         <div className="class">
           <h1>{currentName}</h1>
           <section>
             <h2>Skills</h2>
-            <button className="legendary">Legendary Only</button>
             <button className="recommended">Recommended Only</button>
             <ul>
-              {currentClass.map((skill, idx) => {
-                if (skill.type) {
-                          return (
-                            <li key={skill[idx]}>
-                              <h3>{skill.name}</h3>
-                              <img src={skill.img} alt='skill photo'></img>
-                              <p>{skill.rarity}</p>
-                              <p>{skill.type}</p>
-                              <p>{skill.description}</p>
-                            </li>
-                          )
-                      } else { 
-                        return (
-                          <li id={skill[idx]}>
-                            <h3>{skill.name}</h3>
-                            <img src={skill.img} alt='skill photo'></img>
-                            <p>{skill.rarity}</p>
-                            <p>{skill.description}</p>
-                          </li>
-                        )
-                      }
-              })
-            }
+              <SkillList currentSkills={currentSkills}/>
             </ul>
           </section>
           <section className="attributes">
@@ -185,59 +156,35 @@ class ClassPage extends React.Component {
             <h2>Clatter Cards</h2>
             <button className="recommendedClatter">Recommended Cards</button>
             <ul>
-              <li>
-                <h3>Clatter card name</h3>
-                <p>[placeholder for image]</p>
-                <p>clatter card description</p>
-              </li>
-              <li>
-                <h3>Clatter card name</h3>
-                <p>[placeholder for image]</p>
-                <p>clatter card description</p>
-              </li>
-              <li>
-                <h3>Clatter card name</h3>
-                <p>[placeholder for image]</p>
-                <p>clatter card description</p>
-              </li>
-              <li>
-                <h3>Clatter card name</h3>
-                <p>[placeholder for image]</p>
-                <p>clatter card description</p>
-              </li>
-              <li>
-                <h3>Clatter card name</h3>
-                <p>[placeholder for image]</p>
-                <p>clatter card description</p>
-              </li>
-              <li>
-                <h3>Clatter card name</h3>
-                <p>[placeholder for image]</p>
-                <p>clatter card description</p>
-              </li>
-              <li>
-                <h3>Clatter card name</h3>
-                <p>[placeholder for image]</p>
-                <p>clatter card description</p>
-              </li>
-              <li>
-                <h3>Clatter card name</h3>
-                <p>[placeholder for image]</p>
-                <p>clatter card description</p>
-              </li>
-              <li>
-                <h3>Clatter card name</h3>
-                <p>[placeholder for image]</p>
-                <p>clatter card description</p>
-              </li>
-              <li>
-                <h3>Clatter card name</h3>
-                <p>[placeholder for image]</p>
-                <p>clatter card description</p>
-              </li>
+              {clatters.map(clatter => {
+                if (clatter.bonus) {
+                  return (
+                    <li>
+                      <h3>{clatter.name}</h3>
+                      <img src={clatter.img} alt={clatter.name}></img>
+                      <p>Region: {clatter.region}</p>
+                      <p>Type: {clatter.type}</p>
+                      <p>{clatter.oneStar}</p>
+                      <p>{clatter.twoStar}</p> 
+                      <p>{clatter.threeStar}</p>
+                      <p>Bonus:{clatter.bonus}</p>
+                    </li>
+                  )
+                } else {return (
+                  <li>
+                    <h3>{clatter.name}</h3>
+                    <img src={clatter.img} alt={clatter.name}></img>
+                    <p>Region: {clatter.region}</p>
+                    <p>Type: {clatter.type}</p>
+                    <p>{clatter.oneStar}</p>
+                    <p>{clatter.twoStar}</p> 
+                    <p>{clatter.threeStar}</p>
+                  </li>
+                )}
+              })}
             </ul>
           </section>
-          <Link to='/Signup-login'><button>Save Build</button></Link>
+          <Link to='/Login'><button>Save Build</button></Link>
         </div>
       </>
     )

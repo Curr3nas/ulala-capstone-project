@@ -1,0 +1,10 @@
+{
+    name: "",
+    rarity: "",
+    region: "",
+    type: "",
+    oneStar: "1 star:",
+    twoStar: "2 star:",
+    threeStar: "3 star:",
+    img: "../ulala-media/clatter-card-icons/.jpg"
+  },
