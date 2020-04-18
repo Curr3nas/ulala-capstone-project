@@ -3,9 +3,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { assassinSkills, druidSkills, gladSkills, hunterSkills, mageSkills, shamanSkills, warlockSkills, warriorSkills } from '../skills/skills'
 import SkillList from './SkillList'
-import { clatters } from '../Clatters/Clatters'
+import ClatterList from './ClatterList'
 import { assassinAttributes, druidAttributes, gladAttributes, hunterAttributes, mageAttributes, shamanAttributes, warlockAttributes, warriorAttributes } from '../Attributes/ClassAttributes'
-
+import TemperList from './TemperList'
 class ClassPage extends React.Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
@@ -15,7 +15,10 @@ class ClassPage extends React.Component {
   state = {
     skills: [],
     name: '',
-    attributes: []
+    attributes: [],
+    recSkills: false,
+    recTempers: false,
+    recClatters: false
   }
 
   componentDidMount = () => {
@@ -84,19 +87,41 @@ class ClassPage extends React.Component {
     }
   } 
 
+  handleRecSkillsClicked = (e) => {
+    e.preventDefault()
+    this.setState({
+      recSkills: !this.state.recSkills
+    });
+  }
+
+  handleRecTempersClicked = (e) => {
+    e.preventDefault()
+    this.setState({
+      recTempers: !this.state.recTempers
+    })
+  }
+
+  handleRecClattersClicked = (e) => {
+    e.preventDefault()
+    this.setState({
+      recClatters: !this.state.recClatters
+    })
+  }
+
   render() {
     let currentSkills = this.state.skills
     let currentName = this.state.name
     let currentAttributes = this.state.attributes
+
     return (
       <>
         <div className="class">
           <h1>{currentName}</h1>
-          <section>
+          <section className="skill">
             <h2>Skills</h2>
-            <button className="recommended">Recommended Only</button>
+            <button className="recommended" onClick={e => {this.handleRecSkillsClicked(e)}}>Recommended Only</button>
             <ul>
-              <SkillList currentSkills={currentSkills}/>
+              <SkillList currentSkills={currentSkills} recSkills={this.state.recSkills} currentName={currentName}/>
             </ul>
           </section>
           <section className="attributes">
@@ -139,46 +164,22 @@ class ClassPage extends React.Component {
           </section>
           <section className="temper">
             <h2>{currentName} Tempers</h2>
-            <button className="recommendedTemper">Recommended Tempers</button>
+            <button className="recommendedTemper" onClick={e => this.handleRecTempersClicked(e)}>Recommended Tempers</button>
             <dl>
-              <dt>temper name</dt>
-              <dd>temper description</dd>
-              <dt>temper name</dt>
-              <dd>temper description</dd>
-              <dt>temper name</dt>
-              <dd>temper description</dd>
+              <TemperList currentName={currentName} recTempers={this.state.recTempers}/>
             </dl>  
           </section>
           <section className="clatter">
             <h2>Clatter Cards</h2>
-            <button className="recommendedClatter">Recommended Cards</button>
+            <p>Clatter cards are special "playing cards" that you collect that add boosts to your stats. The raw stat boosts provided
+              by the cards themselves is only marginally important. The real key to clatter cards are the "bond" bonuses that can be obtained.
+              There are two types of bond bonuses: Region and Type. For example, the 'Heavy Horn' type, and the 'Coast' region. Clicking on the
+              'Recommended Cards' button below, will filter out the cards you want to look for based off of the recommended bonuses for your
+              class.
+            </p>
+            <button className="recommendedClatter" onClick={e => this.handleRecClattersClicked(e)}>Recommended Cards</button>
             <ul>
-              {clatters.map(clatter => {
-                if (clatter.bonus) {
-                  return (
-                    <li>
-                      <h3>{clatter.name}</h3>
-                      <img src={clatter.img} alt={clatter.name}></img>
-                      <p>Region: {clatter.region}</p>
-                      <p>Type: {clatter.type}</p>
-                      <p>{clatter.oneStar}</p>
-                      <p>{clatter.twoStar}</p> 
-                      <p>{clatter.threeStar}</p>
-                      <p>Bonus:{clatter.bonus}</p>
-                    </li>
-                  )
-                } else {return (
-                  <li>
-                    <h3>{clatter.name}</h3>
-                    <img src={clatter.img} alt={clatter.name}></img>
-                    <p>Region: {clatter.region}</p>
-                    <p>Type: {clatter.type}</p>
-                    <p>{clatter.oneStar}</p>
-                    <p>{clatter.twoStar}</p> 
-                    <p>{clatter.threeStar}</p>
-                  </li>
-                )}
-              })}
+              <ClatterList currentName={currentName} recClatters={this.state.recClatters}/>
             </ul>
           </section>
           <Link to='/Login'><button>Save Build</button></Link>
