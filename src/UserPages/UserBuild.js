@@ -1,28 +1,21 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { assassinSkills, druidSkills, gladSkills, hunterSkills, mageSkills, shamanSkills, warlockSkills, warriorSkills } from '../skills/skills'
-import SkillList from './SkillList'
-import ClatterList from './ClatterList'
 import { assassinAttributes, druidAttributes, gladAttributes, hunterAttributes, mageAttributes, shamanAttributes, warlockAttributes, warriorAttributes } from '../Attributes/ClassAttributes'
-import TemperList from './TemperList'
-class ClassPage extends React.Component {
-  // eslint-disable-next-line no-useless-constructor
-  constructor(props) {
-    super(props)
-  }
-  
+import TemperList from '../ClassPages/TemperList'
+import BuildSkillList from './BuildSkillList'
+import ClatterList from '../ClassPages/ClatterList'
+
+class UserBuild extends React.Component {
+
   state = {
     skills: [],
-    name: '',
-    attributes: [],
-    recSkills: false,
-    recTempers: false,
-    recClatters: false
+    name: "",
+    attributes: []
   }
 
   componentDidMount = () => {
-    if(this.props.location.pathname === "/UserBuilds/:user-id/Assassin") {
+    if(this.props.match.params.build === "Assassin") {
       this.setState({
         skills: assassinSkills,
         name: "Assassin",
@@ -87,27 +80,6 @@ class ClassPage extends React.Component {
     }
   } 
 
-  handleRecSkillsClicked = (e) => {
-    e.preventDefault()
-    this.setState({
-      recSkills: !this.state.recSkills
-    });
-  }
-
-  handleRecTempersClicked = (e) => {
-    e.preventDefault()
-    this.setState({
-      recTempers: !this.state.recTempers
-    })
-  }
-
-  handleRecClattersClicked = (e) => {
-    e.preventDefault()
-    this.setState({
-      recClatters: !this.state.recClatters
-    })
-  }
-
   render() {
     let currentSkills = this.state.skills
     let currentName = this.state.name
@@ -119,9 +91,8 @@ class ClassPage extends React.Component {
           <h1>{currentName}</h1>
           <section className="skill">
             <h2>Skills</h2>
-            <button className="recommended" onClick={e => {this.handleRecSkillsClicked(e)}}>Recommended Only</button>
             <ul>
-              <SkillList currentSkills={currentSkills} recSkills={this.state.recSkills} currentName={currentName}/>
+              <BuildSkillList currentSkills={currentSkills} recSkills={this.state.recSkills} currentName={currentName}/>
             </ul>
           </section>
           <section className="attributes">
@@ -189,4 +160,4 @@ class ClassPage extends React.Component {
   }
 }
 
-export default ClassPage
+export default UserBuild

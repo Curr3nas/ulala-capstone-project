@@ -1,8 +1,8 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom'
+
 class Login extends React.Component {
-
-
   
 render() {
   return (
@@ -18,7 +18,7 @@ render() {
               <input type="text" name="username" id="username" placeholder="username" />
               <label htmlFor="password">Password: </label>
               <input type="password" name="password" id="password" placeholder="password" />
-              <button>Submit</button>
+              <Link to='/UserBuilds'><button>Submit</button></Link>
             </form>
           </section>
         </div>
@@ -30,7 +30,7 @@ render() {
               <input type="text" name="username" id="login-username" placeholder="username" />
               <label htmlFor="password">Password: </label>
               <input type="password" name="password" id="login-password" placeholder="password" />
-              <button>Submit</button>
+              <Link to='/UserBuilds'><button>Submit</button></Link>
             </form>
           </section>
         </div>

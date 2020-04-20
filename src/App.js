@@ -7,6 +7,8 @@ import Healer from './ClassSelectPages/Healer'
 import Dps from './ClassSelectPages/Dps'
 import ClassPage from './ClassPages/ClassPage'
 import Login from './LoginPage/Login'
+import UserBuildSelect from './UserPages/UserBuildSelect'
+import UserBuild from './UserPages/UserBuild'
 
 
 class App extends React.Component {
@@ -25,6 +27,8 @@ class App extends React.Component {
       <Route path='/Dps' component={Dps}/>
       <Route path={['/Assassin', '/Druid', '/Hunter', '/Mage', '/Gladiator', '/Shaman', '/Warlock', '/Warrior']} component={ClassPage} />
       <Route path='/Login' component={Login} />
+      <Route exact path='/UserBuilds/:user_id' component={UserBuildSelect} />
+      <Route path='/UserBuilds/:user_id/:build' component={UserBuild} />
     </>
   )
   }

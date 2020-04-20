@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Warrior from '../ulala-media/class-images/Warrior.png'
+import Warrior from '../ulala-media/class-images/warrior.png'
 import gladiator from '../ulala-media/class-images/gladiator.png'
 import './ClassSelect.css'
 
