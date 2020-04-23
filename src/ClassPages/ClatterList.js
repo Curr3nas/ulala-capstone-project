@@ -8,13 +8,17 @@ class ClatterList extends React.Component {
   let healerClatters = clatters.filter(clatter => clatter.type === 'Solid Bone')
   let dpsClatters = clatters.filter(clatter => clatter.type === 'Giant Jaw' || clatter.type === 'Flying Wings')
 
-  if (this.props.recClatters && this.props.currentName.includes('Warlock', 'Assassin', 'Mage', 'Hunter')) {
+    let dps = ['Warlock', 'Assassin', 'Mage', 'Hunter']
+    let healer = ['Shaman', 'Druid']
+    let tank = ['Gladiator', 'Warrior']
+
+  if (this.props.recClatters && dps.includes(this.props.currentName)) {
     return (
       <>
-        {dpsClatters.map(clatter => {
+        {dpsClatters.map((clatter, idx) => {
           if (clatter.bonus) {
             return (
-              <li>
+              <li key={idx}>
                 <h3>{clatter.name}</h3>
                 <img src={clatter.img} alt={clatter.name}></img>
                 <p>Region: {clatter.region}</p>
@@ -26,7 +30,7 @@ class ClatterList extends React.Component {
               </li>
             )
           } else {return (
-            <li>
+            <li key={idx}>
               <h3>{clatter.name}</h3>
               <img src={clatter.img} alt={clatter.name}></img>
               <p>Region: {clatter.region}</p>
@@ -39,13 +43,13 @@ class ClatterList extends React.Component {
         })}
       </>
     )
-    } else if (this.props.recClatters && this.props.currentName.includes('Shaman', 'Druid')) {
+    } else if (this.props.recClatters && healer.includes(this.props.currentName)) {
       return (
         <>
-          {healerClatters.map(clatter => {
+          {healerClatters.map((clatter, idx) => {
             if (clatter.bonus) {
               return (
-                <li>
+                <li key={idx}>
                   <h3>{clatter.name}</h3>
                   <img src={clatter.img} alt={clatter.name}></img>
                   <p>Region: {clatter.region}</p>
@@ -57,7 +61,7 @@ class ClatterList extends React.Component {
                 </li>
               )
             } else {return (
-              <li>
+              <li key={idx}>
                 <h3>{clatter.name}</h3>
                 <img src={clatter.img} alt={clatter.name}></img>
                 <p>Region: {clatter.region}</p>
@@ -70,13 +74,13 @@ class ClatterList extends React.Component {
           })}
         </>
       )
-    } else if (this.props.recClatters && this.props.currentName.includes('Warrior', 'Gladiator')){
+    } else if (this.props.recClatters && tank.includes(this.props.currentName)){
       return (
         <>
-          {tankClatters.map(clatter => {
+          {tankClatters.map((clatter, idx) => {
             if (clatter.bonus) {
               return (
-                <li>
+                <li key={idx}>
                   <h3>{clatter.name}</h3>
                   <img src={clatter.img} alt={clatter.name}></img>
                   <p>Region: {clatter.region}</p>
@@ -88,7 +92,7 @@ class ClatterList extends React.Component {
                 </li>
               )
             } else {return (
-              <li>
+              <li key={idx}>
                 <h3>{clatter.name}</h3>
                 <img src={clatter.img} alt={clatter.name}></img>
                 <p>Region: {clatter.region}</p>
@@ -104,10 +108,10 @@ class ClatterList extends React.Component {
     } else {
       return (
         <>
-          {clatters.map(clatter => {
+          {clatters.map((clatter, idx) => {
             if (clatter.bonus) {
               return (
-                <li>
+                <li key={idx}>
                   <h3>{clatter.name}</h3>
                   <img src={clatter.img} alt={clatter.name}></img>
                   <p>Region: {clatter.region}</p>
@@ -119,7 +123,7 @@ class ClatterList extends React.Component {
                 </li>
               )
             } else {return (
-              <li>
+              <li key={idx}>
                 <h3>{clatter.name}</h3>
                 <img src={clatter.img} alt={clatter.name}></img>
                 <p>Region: {clatter.region}</p>

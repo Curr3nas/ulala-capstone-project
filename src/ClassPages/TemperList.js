@@ -11,12 +11,12 @@ class TemperList extends React.Component {
       
       return (
         <>
-          {recTempers.map(temper => {
+          {recTempers.map((temper, idx) => {
             return (
-              <>
-              <dt>{temper.name}</dt>
-              <dd>{temper.desc}</dd>
-              </>
+              <li key={idx}>
+                <h4>{temper.name}</h4>
+                <p>{temper.desc}</p>
+              </li>
             )
           })}
           </>
@@ -24,12 +24,12 @@ class TemperList extends React.Component {
     } else {
       return (
       <>
-        {tempers.map(temper => {
+        {tempers.map((temper, idx) => {
           return (
-            <>
-            <dt>{temper.name}</dt>
-            <dd>{temper.desc}</dd>
-            </>
+            <li key={idx}>
+                <h4>{temper.name}</h4>
+                <p>{temper.desc}</p>
+              </li>
           )
         })}
       </>

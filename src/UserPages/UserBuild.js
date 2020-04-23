@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { assassinSkills, druidSkills, gladSkills, hunterSkills, mageSkills, shamanSkills, warlockSkills, warriorSkills } from '../skills/skills'
 import { assassinAttributes, druidAttributes, gladAttributes, hunterAttributes, mageAttributes, shamanAttributes, warlockAttributes, warriorAttributes } from '../Attributes/ClassAttributes'
-import TemperList from '../ClassPages/TemperList'
+import BuildTemperList from './BuildTemperList'
 import BuildSkillList from './BuildSkillList'
-import ClatterList from '../ClassPages/ClatterList'
+import BuildClatterList from './BuildClatterList'
 
 class UserBuild extends React.Component {
 
@@ -23,7 +23,7 @@ class UserBuild extends React.Component {
       })
     }
 
-    if(this.props.location.pathname === "/Druid") {
+    if(this.props.match.params.build === "Druid") {
       this.setState({
         skills: druidSkills,
         name: "Druid",
@@ -31,7 +31,7 @@ class UserBuild extends React.Component {
       })
     }
 
-    if(this.props.location.pathname === "/Hunter") {
+    if(this.props.match.params.build === "Hunter") {
       this.setState({
         skills: hunterSkills,
         name: "Hunter",
@@ -39,7 +39,7 @@ class UserBuild extends React.Component {
       })
     }
 
-    if(this.props.location.pathname === "/Shaman") {
+    if(this.props.match.params.build === "Shaman") {
       this.setState({
         skills: shamanSkills,
         name: "Shaman",
@@ -47,7 +47,7 @@ class UserBuild extends React.Component {
       })
     }
 
-    if(this.props.location.pathname === "/Gladiator") {
+    if(this.props.match.params.build === "Gladiator") {
       this.setState({
         skills: gladSkills,
         name: "Gladiator",
@@ -55,7 +55,7 @@ class UserBuild extends React.Component {
       })
     }
 
-    if(this.props.location.pathname === "/Warlock") {
+    if(this.props.match.params.build === "Warlock") {
       this.setState({
         skills: warlockSkills,
         name: "Warlock",
@@ -63,7 +63,7 @@ class UserBuild extends React.Component {
       })
     }
 
-    if(this.props.location.pathname === "/Warrior") {
+    if(this.props.match.params.build === "Warrior") {
       this.setState({
         skills: warriorSkills,
         name: "Warrior",
@@ -71,7 +71,7 @@ class UserBuild extends React.Component {
       })
     }
 
-    if(this.props.location.pathname === "/Mage") {
+    if(this.props.match.params.build === "Mage") {
       this.setState({
         skills: mageSkills,
         name: "Mage",
@@ -80,10 +80,14 @@ class UserBuild extends React.Component {
     }
   } 
 
+
+
   render() {
     let currentSkills = this.state.skills
     let currentName = this.state.name
     let currentAttributes = this.state.attributes
+    let back= `/UserBuilds/${this.props.match.params.user_id}`;
+
 
     return (
       <>
@@ -98,62 +102,29 @@ class UserBuild extends React.Component {
           <section className="attributes">
             <h2>{currentName} Attributes</h2>
             <ul>
-              {currentAttributes.map(attribute => {
+              {currentAttributes.map((attribute, idx) => {
                 return (
-                  <li>
+                  <li key={idx}>
                     <h3>{attribute.name}</h3>
-                    <p>{attribute.desc}</p>
-                    <ul>
-                      <li>{attribute.statOne}</li>
-                      <li>{attribute.statTwo}</li>
-                      <li>{attribute.statThree}</li>
-                    </ul>
                     <p>{attribute.allocation}</p>
                   </li>
                 )
               })}
             </ul>
           </section>
-          <section className="wish">
-            <h2>Wishing Well</h2>
-            <p>You earn coins to throw into the wishing well by completing all five daily quests that are provided to you each day. It can take as long as 34 days to fill you wish meter enough to earn the legendary version of the skill you are wishing for. It usually will not take this long.</p>
-            <p>You should prioritize these skills from the wishing well. If you already have a legendary version of the skill, move on to the next skill in the list. Once you have obtained the legendary version of all these skills, feel free to prioritize the skills in any order you wish.</p>
-            <ol>
-              <li>
-                <p>skill name</p>
-                <p>[placeholder for skill image. legendary]</p>
-              </li>
-              <li>
-                <p>skill name</p>
-                <p>[placeholder for skill image. legendary]</p>
-              </li>
-              <li>
-                <p>skill name</p>
-                <p>[placeholder for skill image. legendary]</p>
-              </li>
-            </ol>
-          </section>
           <section className="temper">
             <h2>{currentName} Tempers</h2>
-            <button className="recommendedTemper" onClick={e => this.handleRecTempersClicked(e)}>Recommended Tempers</button>
-            <dl>
-              <TemperList currentName={currentName} recTempers={this.state.recTempers}/>
-            </dl>  
+            <ul>
+              <BuildTemperList currentName={currentName} recTempers={this.state.recTempers}/>
+            </ul>  
           </section>
           <section className="clatter">
             <h2>Clatter Cards</h2>
-            <p>Clatter cards are special "playing cards" that you collect that add boosts to your stats. The raw stat boosts provided
-              by the cards themselves is only marginally important. The real key to clatter cards are the "bond" bonuses that can be obtained.
-              There are two types of bond bonuses: Region and Type. For example, the 'Heavy Horn' type, and the 'Coast' region. Clicking on the
-              'Recommended Cards' button below, will filter out the cards you want to look for based off of the recommended bonuses for your
-              class.
-            </p>
-            <button className="recommendedClatter" onClick={e => this.handleRecClattersClicked(e)}>Recommended Cards</button>
             <ul>
-              <ClatterList currentName={currentName} recClatters={this.state.recClatters}/>
+              <BuildClatterList currentName={currentName} />
             </ul>
           </section>
-          <Link to='/Login'><button>Save Build</button></Link>
+          <Link to={back}><button>Back to Builds</button></Link>
         </div>
       </>
     )

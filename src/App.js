@@ -27,8 +27,8 @@ class App extends React.Component {
       <Route path='/Dps' component={Dps}/>
       <Route path={['/Assassin', '/Druid', '/Hunter', '/Mage', '/Gladiator', '/Shaman', '/Warlock', '/Warrior']} component={ClassPage} />
       <Route path='/Login' component={Login} />
-      <Route exact path='/UserBuilds/:user_id' component={UserBuildSelect} />
-      <Route path='/UserBuilds/:user_id/:build' component={UserBuild} />
+      <Route exact path='/UserBuilds/:user_name' component={UserBuildSelect} />
+      <Route path='/UserBuilds/:user_name/:build' component={UserBuild} />
     </>
   )
   }

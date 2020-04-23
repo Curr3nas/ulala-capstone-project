@@ -22,7 +22,7 @@ class ClassPage extends React.Component {
   }
 
   componentDidMount = () => {
-    if(this.props.location.pathname === "/UserBuilds/:user-id/Assassin") {
+    if(this.props.location.pathname === "/Assassin") {
       this.setState({
         skills: assassinSkills,
         name: "Assassin",
@@ -142,25 +142,6 @@ class ClassPage extends React.Component {
                 )
               })}
             </ul>
-          </section>
-          <section className="wish">
-            <h2>Wishing Well</h2>
-            <p>You earn coins to throw into the wishing well by completing all five daily quests that are provided to you each day. It can take as long as 34 days to fill you wish meter enough to earn the legendary version of the skill you are wishing for. It usually will not take this long.</p>
-            <p>You should prioritize these skills from the wishing well. If you already have a legendary version of the skill, move on to the next skill in the list. Once you have obtained the legendary version of all these skills, feel free to prioritize the skills in any order you wish.</p>
-            <ol>
-              <li>
-                <p>skill name</p>
-                <p>[placeholder for skill image. legendary]</p>
-              </li>
-              <li>
-                <p>skill name</p>
-                <p>[placeholder for skill image. legendary]</p>
-              </li>
-              <li>
-                <p>skill name</p>
-                <p>[placeholder for skill image. legendary]</p>
-              </li>
-            </ol>
           </section>
           <section className="temper">
             <h2>{currentName} Tempers</h2>
