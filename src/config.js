@@ -1,4 +1,4 @@
 export default {
-  API_ENDPOINT: 'http://localhost:8000',
+  API_ENDPOINT: 'https://murmuring-hollows-51888.herokuapp.com/',
   TOKEN_KEY: 'ulala-guide-auth-token'
 }
