@@ -23,7 +23,7 @@ class ClatterList extends React.Component {
             return (
               <li key={idx}>
                 <h3>{clatter.name}</h3>
-                <img src={source} alt={clatter.name}></img>
+                <img src={source} alt={clatter.name} className="clatter-img"></img>
               </li>
               
             )
@@ -39,7 +39,7 @@ class ClatterList extends React.Component {
               return (
                 <li key={idx}>
                   <h3>{clatter.name}</h3>
-                  <img src={source} alt={clatter.name}></img>
+                  <img src={source} alt={clatter.name} className="clatter-img"></img>
                 </li>
               )
             }
@@ -55,7 +55,7 @@ class ClatterList extends React.Component {
             return (
               <li key={idx}>
                 <h3>{clatter.name}</h3>
-                <img src={source} alt={clatter.name}></img>
+                <img src={source} alt={clatter.name} className="clatter-img"></img>
               </li>
             )}
           )}

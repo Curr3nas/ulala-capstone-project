@@ -6,6 +6,8 @@ import BuildTemperList from './BuildTemperList'
 import BuildSkillList from './BuildSkillList'
 import BuildClatterList from './BuildClatterList'
 
+
+import '../ClassPages/ClassPage.css'
 class UserBuild extends React.Component {
 
   state = {
@@ -86,12 +88,13 @@ class UserBuild extends React.Component {
     let currentSkills = this.state.skills
     let currentName = this.state.name
     let currentAttributes = this.state.attributes
-    let back= `/UserBuilds/${this.props.match.params.user_id}`;
+    let back= `/UserBuilds/${this.props.match.params.user_name}`;
 
 
     return (
       <>
-        <div className="class">
+        <main className="class">
+        <div className="sections">
           <h1>{currentName}</h1>
           <section className="skill">
             <h2>Skills</h2>
@@ -126,6 +129,7 @@ class UserBuild extends React.Component {
           </section>
           <Link to={back}><button>Back to Builds</button></Link>
         </div>
+        </main>
       </>
     )
   }

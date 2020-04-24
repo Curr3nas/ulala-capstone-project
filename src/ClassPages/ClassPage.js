@@ -6,6 +6,9 @@ import SkillList from './SkillList'
 import ClatterList from './ClatterList'
 import { assassinAttributes, druidAttributes, gladAttributes, hunterAttributes, mageAttributes, shamanAttributes, warlockAttributes, warriorAttributes } from '../Attributes/ClassAttributes'
 import TemperList from './TemperList'
+
+import './ClassPage.css'
+
 class ClassPage extends React.Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
@@ -115,8 +118,9 @@ class ClassPage extends React.Component {
 
     return (
       <>
-        <div className="class">
-          <h1>{currentName}</h1>
+      <main className="class">
+        <div className="sections">
+          <h1 className="title">{currentName}</h1>
           <section className="skill">
             <h2>Skills</h2>
             <button className="recommended" onClick={e => {this.handleRecSkillsClicked(e)}}>Recommended Only</button>
@@ -146,9 +150,9 @@ class ClassPage extends React.Component {
           <section className="temper">
             <h2>{currentName} Tempers</h2>
             <button className="recommendedTemper" onClick={e => this.handleRecTempersClicked(e)}>Recommended Tempers</button>
-            <dl>
+            <ul>
               <TemperList currentName={currentName} recTempers={this.state.recTempers}/>
-            </dl>  
+            </ul>  
           </section>
           <section className="clatter">
             <h2>Clatter Cards</h2>
@@ -165,6 +169,7 @@ class ClassPage extends React.Component {
           </section>
           <Link to='/Login'><button>Save Build</button></Link>
         </div>
+        </main>
       </>
     )
   }

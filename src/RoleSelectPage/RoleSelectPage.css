@@ -3,3 +3,31 @@
   width: 200px;
 }
 
+.choices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eee8aa;
+  color: #A33117;
+}
+
+.choices header {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.choices .sections section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.choices p {
+  max-width: 85%;
+  margin-top: 20px;
+}
+
+.choices h2 {
+  margin-bottom: 15px;
+}

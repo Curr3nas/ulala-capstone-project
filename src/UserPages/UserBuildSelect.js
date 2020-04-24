@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import BuildApiService from '../Services/build-api-service'
 
+import './UserBuildSelect.css'
 
 class UserBuildSelect extends React.Component {
   
@@ -19,7 +20,6 @@ class UserBuildSelect extends React.Component {
           userName: res.user_name,
           classes: res.classes
       })
-      console.log(this.state.classes)
     })
   }
 
@@ -35,14 +35,12 @@ class UserBuildSelect extends React.Component {
         classes: this.state.classes + ', ' + e.target.value
       })
     }
-    
-    this.setState({
-      classes: this.state.classes + ', ' + e.target.value
-    })
 
     const build = e.target.value
 
     BuildApiService.postBuild(this.state.userName, build)
+
+    e.target.value = "Choose a Build"
   }
 
   handleDeleteBuildClicked = (e, item) => {
@@ -75,36 +73,39 @@ class UserBuildSelect extends React.Component {
     if (this.state.classes !== "") {
     return (
       <>
-      <h2>{this.state.userName}'s Builds</h2>
+      <main className="build">
+      <h1>{this.state.userName}'s Builds</h1>
+      <select defaultChecked="Choose a build" onChange={e => this.handleAddBuildSelected(e)}>
+        <>
+        <option value="choose" hidden>Choose a Build</option>
+        {available.map(element => {
+          return (
+            <>
+            <option value={element}>{element}</option>
+            </>
+          )
+          })}
+        </>
+      </select>
       {classes.map(item => {
         source = `../ulala-media/class-images/${item.toLowerCase()}.png`
         link =`/UserBuilds/${this.state.userName}/${item}`
         return (
           <>
-          <h3>{item}</h3>
-          <Link to={link}><img src={source} alt={item}></img></Link>
-          <button onClick={e => this.handleDeleteBuildClicked(e, item)}>Delete</button> <button>Change Class</button>
+          <h2>{item}</h2>
+          <Link to={link}><img id="image" src={source} alt={item}></img></Link>
+          <button onClick={e => this.handleDeleteBuildClicked(e, item)}>Delete</button>
           </>
         )
       })}
-      <select defaultChecked="Choose a build" onChange={e => this.handleAddBuildSelected(e)}>
-        <>
-        <option value="choose" hidden>Choose a Build</option>
-        {available.map(element => {
-          return (
-            <>
-            <option value={element}>{element}</option>
-            </>
-          )
-          })}
-        </>
-      </select>
+      </main>
       </>
     )
   } else {
     return (
       <>
-      <h2>{this.state.userName}'s Builds</h2>
+      <main className="build">
+      <h1>{this.state.userName}'s Builds</h1>
       <select defaultChecked="Choose a build" onChange={e => this.handleAddBuildSelected(e)}>
         <>
         <option value="choose" hidden>Choose a Build</option>
@@ -117,6 +118,7 @@ class UserBuildSelect extends React.Component {
           })}
         </>
       </select>
+      </main>
       </>
     )
   }

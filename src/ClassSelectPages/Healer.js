@@ -7,19 +7,19 @@ import './ClassSelect.css'
 function Healer() {
   return (
     <>
-      <main>
+      <main className="choices">
         <header>
           <h1>Choose Your Class</h1>
         </header>
-        <div className="Healer">
+        <div className="sections">
           <section>
-            <Link to='/Shaman'><img src={shaman} alt='shaman class' className='image'></img></Link>
             <h2>Shaman</h2>
+            <Link to='/Shaman'><img src={shaman} alt='shaman class' className='image'></img></Link>
             <p>Shamans are doubtlessly the most popular ones in a team. With mighty cohesive force and a Heal power, they are also able to summon different totems.</p>
           </section>
           <section className="Druid">
-            <Link to='/Druid'><img src={druid} alt='druid class' className='image'></img></Link>
             <h2>Druid</h2>
+            <Link to='/Druid'><img src={druid} alt='druid class' className='image'></img></Link>
             <p>Druids are messengers of nature, specialized in shapshifting and the use of natural forces in curing teammates.</p>
           </section>
         </div>

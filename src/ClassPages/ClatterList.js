@@ -20,7 +20,7 @@ class ClatterList extends React.Component {
             return (
               <li key={idx}>
                 <h3>{clatter.name}</h3>
-                <img src={clatter.img} alt={clatter.name}></img>
+                <img src={clatter.img} alt={clatter.name} className="clatter-img"></img>
                 <p>Region: {clatter.region}</p>
                 <p>Type: {clatter.type}</p>
                 <p>{clatter.oneStar}</p>
@@ -32,7 +32,7 @@ class ClatterList extends React.Component {
           } else {return (
             <li key={idx}>
               <h3>{clatter.name}</h3>
-              <img src={clatter.img} alt={clatter.name}></img>
+              <img src={clatter.img} alt={clatter.name} className="clatter-img"></img>
               <p>Region: {clatter.region}</p>
               <p>Type: {clatter.type}</p>
               <p>{clatter.oneStar}</p>
@@ -51,7 +51,7 @@ class ClatterList extends React.Component {
               return (
                 <li key={idx}>
                   <h3>{clatter.name}</h3>
-                  <img src={clatter.img} alt={clatter.name}></img>
+                  <img src={clatter.img} alt={clatter.name} className="clatter-img"></img>
                   <p>Region: {clatter.region}</p>
                   <p>Type: {clatter.type}</p>
                   <p>{clatter.oneStar}</p>
@@ -63,7 +63,7 @@ class ClatterList extends React.Component {
             } else {return (
               <li key={idx}>
                 <h3>{clatter.name}</h3>
-                <img src={clatter.img} alt={clatter.name}></img>
+                <img src={clatter.img} alt={clatter.name} className="clatter-img"></img>
                 <p>Region: {clatter.region}</p>
                 <p>Type: {clatter.type}</p>
                 <p>{clatter.oneStar}</p>
@@ -82,7 +82,7 @@ class ClatterList extends React.Component {
               return (
                 <li key={idx}>
                   <h3>{clatter.name}</h3>
-                  <img src={clatter.img} alt={clatter.name}></img>
+                  <img src={clatter.img} alt={clatter.name} className="clatter-img"></img>
                   <p>Region: {clatter.region}</p>
                   <p>Type: {clatter.type}</p>
                   <p>{clatter.oneStar}</p>
@@ -94,7 +94,7 @@ class ClatterList extends React.Component {
             } else {return (
               <li key={idx}>
                 <h3>{clatter.name}</h3>
-                <img src={clatter.img} alt={clatter.name}></img>
+                <img src={clatter.img} alt={clatter.name} className="clatter-img"></img>
                 <p>Region: {clatter.region}</p>
                 <p>Type: {clatter.type}</p>
                 <p>{clatter.oneStar}</p>
@@ -113,7 +113,7 @@ class ClatterList extends React.Component {
               return (
                 <li key={idx}>
                   <h3>{clatter.name}</h3>
-                  <img src={clatter.img} alt={clatter.name}></img>
+                  <img src={clatter.img} alt={clatter.name} className="clatter-img"></img>
                   <p>Region: {clatter.region}</p>
                   <p>Type: {clatter.type}</p>
                   <p>{clatter.oneStar}</p>
@@ -125,7 +125,7 @@ class ClatterList extends React.Component {
             } else {return (
               <li key={idx}>
                 <h3>{clatter.name}</h3>
-                <img src={clatter.img} alt={clatter.name}></img>
+                <img src={clatter.img} alt={clatter.name} className="clatter-img"></img>
                 <p>Region: {clatter.region}</p>
                 <p>Type: {clatter.type}</p>
                 <p>{clatter.oneStar}</p>

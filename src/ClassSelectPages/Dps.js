@@ -10,11 +10,11 @@ import './ClassSelect.css'
 function Dps() {
   return (
     <>
-      <main>
+      <main className="choices">
         <header>
           <h1>Choose Your Class</h1>
         </header>
-        <div className="Dps">
+        <div className="sections">
           <section>
             <h2>Assassin</h2>
             <Link to='/Assassin'><img src={assassin} alt='assassin class' className='image'></img></Link>
