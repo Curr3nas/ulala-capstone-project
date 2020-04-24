@@ -17,7 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(c:/Users/curr3/projects/first-capstone/src/ulala-media/logos-and-backgrounds/static-ulala-movie.jpg);
+  background-image: url(../ulala-media/logos-and-backgrounds/static-ulala-movie.jpg);
   min-height: 100vh;
 }
 
