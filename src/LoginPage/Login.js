@@ -48,6 +48,9 @@ class Login extends React.Component {
   }
   
 render() {
+
+  const locationState = this.props.location.state
+
   return (
       <>
       <main className="login-page">
@@ -69,6 +72,7 @@ render() {
         <div className="login">
           <section>
             <h2>Login</h2>
+            {locationState && <p>{this.props.location.state.reason}</p>}
             <form onSubmit={ev => this.handleSubmitBasicAuth(ev)}>
               <label htmlFor="user_name">Username: </label>
               <input type="text" id="user_name" placeholder="username" />

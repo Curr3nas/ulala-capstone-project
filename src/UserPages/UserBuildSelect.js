@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import BuildApiService from '../Services/build-api-service'
+import TokenService from '../Services/token-service'
 
 import './UserBuildSelect.css'
 
@@ -16,11 +17,19 @@ class UserBuildSelect extends React.Component {
 
   componentDidMount = () => {
     BuildApiService.getUserBuild(this.props.match.params.user_name)
+      .catch(err => {
+        if (err.error === 'Unauthorized request') {
+          TokenService.clearAuthToken();
+          this.props.history.push('/Login', {reason: "Invalid Credentials"})
+          return Promise.reject()
+        }
+      }) 
       .then(res => {
         this.setState({
           userName: res.user_name,
           classes: res.classes
       })
+
     })
   }
 

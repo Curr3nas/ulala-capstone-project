@@ -17,6 +17,10 @@ class UserBuild extends React.Component {
   }
 
   componentDidMount = () => {
+  
+  
+  
+  
     if(this.props.match.params.build === "Assassin") {
       this.setState({
         skills: assassinSkills,
