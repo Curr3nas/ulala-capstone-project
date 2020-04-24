@@ -17,10 +17,6 @@ class UserBuild extends React.Component {
   }
 
   componentDidMount = () => {
-  
-  
-  
-  
     if(this.props.match.params.build === "Assassin") {
       this.setState({
         skills: assassinSkills,
@@ -86,14 +82,11 @@ class UserBuild extends React.Component {
     }
   } 
 
-
-
   render() {
     let currentSkills = this.state.skills
     let currentName = this.state.name
     let currentAttributes = this.state.attributes
     let back= `/UserBuilds/${this.props.match.params.user_name}`;
-
 
     return (
       <>
