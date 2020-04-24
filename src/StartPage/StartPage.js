@@ -16,6 +16,14 @@ function StartPage() {
         To get started, please click the button below and you will be directed to the starting page of the app.  It will walk you through choosing a
         character and then show you all you need to know about that class to have a fun and successful time playing Ulala: Idle Adventure!  Enjoy!
       </p>
+      <br></br>
+      <p>
+        If you would like to use the User features, without creating a login.  Please use these demo credentials.  Just be aware that others may also be
+        using the login.Password: demoPassw0rd
+      </p>
+      <br></br>
+      <p>Username: demoUser</p>
+      <p>Password: demoPassw0rd</p>
       <Link to='/RolePage'><button>Continue</button></Link>
     </div>
     </div>
