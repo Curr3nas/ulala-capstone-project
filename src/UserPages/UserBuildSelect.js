@@ -12,6 +12,8 @@ class UserBuildSelect extends React.Component {
     checked: false
   }
 
+  // make get request when component mounts
+
   componentDidMount = () => {
     BuildApiService.getUserBuild(this.props.match.params.user_name)
       .then(res => {
