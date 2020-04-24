@@ -1,5 +1,5 @@
 import React from 'react'
-import { clatters } from '../Clatters/Clatters'
+import { clatters } from '../clatters/clatters'
 
 class ClatterList extends React.Component {
   render () {
