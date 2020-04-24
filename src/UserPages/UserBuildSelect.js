@@ -9,7 +9,6 @@ class UserBuildSelect extends React.Component {
   state = {
     userName: '',
     classes: '',
-    src: '',
     checked: false
   }
 
@@ -46,6 +45,7 @@ class UserBuildSelect extends React.Component {
   handleDeleteBuildClicked = (e, item) => {
     e.preventDefault()
     const classes = this.state.classes.split(', ')
+    console.log(classes)
     const newClassesArray = classes.filter(build => build !== item)
     let newClassesString
     for (let i= 0; i < newClassesArray.length; i++) {
@@ -70,7 +70,27 @@ class UserBuildSelect extends React.Component {
     let source
     let link
 
-    if (this.state.classes !== "") {
+    if (this.state.classes === "" || this.state.classes === null || this.state.classes === undefined) {
+      return (
+        <>
+        <main className="build">
+        <h1>{this.state.userName}'s Builds</h1>
+        <select defaultChecked="Choose a build" onChange={e => this.handleAddBuildSelected(e)}>
+          <>
+          <option value="choose" hidden>Choose a Build</option>
+          {available.map(element => {
+            return (
+              <>
+              <option value={element}>{element}</option>
+              </>
+            )
+            })}
+          </>
+        </select>
+        </main>
+        </>
+      )
+  } else {
     return (
       <>
       <main className="build">
@@ -98,26 +118,6 @@ class UserBuildSelect extends React.Component {
           </>
         )
       })}
-      </main>
-      </>
-    )
-  } else {
-    return (
-      <>
-      <main className="build">
-      <h1>{this.state.userName}'s Builds</h1>
-      <select defaultChecked="Choose a build" onChange={e => this.handleAddBuildSelected(e)}>
-        <>
-        <option value="choose" hidden>Choose a Build</option>
-        {available.map(element => {
-          return (
-            <>
-            <option value={element}>{element}</option>
-            </>
-          )
-          })}
-        </>
-      </select>
       </main>
       </>
     )
