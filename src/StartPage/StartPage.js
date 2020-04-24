@@ -19,7 +19,7 @@ function StartPage() {
       <br></br>
       <p>
         If you would like to use the User features, without creating a login.  Please use these demo credentials.  Just be aware that others may also be
-        using the login.Password: demoPassw0rd
+        using the login.
       </p>
       <br></br>
       <p>Username: demoUser</p>
