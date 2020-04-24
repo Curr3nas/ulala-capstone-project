@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { assassinSkills, druidSkills, gladSkills, hunterSkills, mageSkills, shamanSkills, warlockSkills, warriorSkills } from '../skills/skills'
 import SkillList from './SkillList'
 import ClatterList from './ClatterList'
-import { assassinAttributes, druidAttributes, gladAttributes, hunterAttributes, mageAttributes, shamanAttributes, warlockAttributes, warriorAttributes } from '../Attributes/ClassAttributes'
+import { assassinAttributes, druidAttributes, gladAttributes, hunterAttributes, mageAttributes, shamanAttributes, warlockAttributes, warriorAttributes } from '../attributes/ClassAttributes'
 import TemperList from './TemperList'
 
 import './ClassPage.css'
