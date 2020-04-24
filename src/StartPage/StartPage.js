@@ -6,6 +6,7 @@ function StartPage() {
 
   return (
   <div className="start">
+    <div className="container">
     <header>
       <h1>Ulala: Idle Adventure Guide</h1>
     </header>
@@ -16,6 +17,7 @@ function StartPage() {
         character and then show you all you need to know about that class to have a fun and successful time playing Ulala: Idle Adventure!  Enjoy!
       </p>
       <Link to='/RolePage'><button>Continue</button></Link>
+    </div>
     </div>
     <footer>
       <p>
