@@ -19,6 +19,7 @@ body {
   align-items: center;
   background-image: url(../ulala-media/logos-and-backgrounds/static-ulala-movie.jpg);
   min-height: 100vh;
+  max-height: 100%;
   position: relative;
   padding-bottom: 160px;
 }
