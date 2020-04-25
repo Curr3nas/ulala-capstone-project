@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  
+  padding: 0;
 }
 
 body * {
@@ -10,7 +10,7 @@ body * {
 
 body {
   margin: 0;
-
+  height: 100%;
 }
 
 .start {
@@ -19,6 +19,8 @@ body {
   align-items: center;
   background-image: url(../ulala-media/logos-and-backgrounds/static-ulala-movie.jpg);
   min-height: 100vh;
+  position: relative;
+  padding-bottom: 160px;
 }
 
 .start header {
@@ -27,6 +29,10 @@ body {
   color: goldenrod;
   text-shadow: 2px 2px black;
   background-color: rgb(0, 0, 0, 0.75)
+}
+
+.container {
+  overflow: auto;
 }
 
 .content {
@@ -58,4 +64,5 @@ body {
   background-color: rgb(0, 0, 0, 0.75);
   position: absolute;
   bottom: 0;
+  height: 140px;
 }

@@ -6,7 +6,7 @@ function StartPage() {
 
   return (
   <div className="start">
-    <div className="container">
+    <div className="container" id="container">
     <header>
       <h1>Ulala: Idle Adventure Guide</h1>
     </header>
