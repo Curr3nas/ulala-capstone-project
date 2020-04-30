@@ -10,6 +10,7 @@ class BuildSkillList extends React.Component {
       return (
         <>
           <h2>Hunt Skills</h2>
+          <ul>
           {huntSkills.map((skill, idx) => {
             let source = `../../${skill.img}`
             return (
@@ -19,7 +20,9 @@ class BuildSkillList extends React.Component {
               </li>
               )
             })}
+            </ul>
           <h2>AFK Skills</h2>
+          <ul>
           {afkSkills.map((skill, idx) => {        
             let source=`../../${skill.img}`
               return (
@@ -29,7 +32,9 @@ class BuildSkillList extends React.Component {
                 </li>
               )
           })}
+          </ul>
           <h2>AOE Skills</h2>
+          <ul>
           {aoeSkills.map((skill, idx) => {        
             let source=`../../${skill.img}`
               return (
@@ -39,6 +44,7 @@ class BuildSkillList extends React.Component {
                 </li>
               )
           })}
+          </ul>
         </>
       )
     }

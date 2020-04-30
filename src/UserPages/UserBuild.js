@@ -92,7 +92,7 @@ class UserBuild extends React.Component {
       <>
         <main className="class">
         <div className="sections">
-          <h1>{currentName}</h1>
+          <h1 className="title">{currentName}</h1>
           <section className="skill">
             <h2>Skills</h2>
             <ul>
