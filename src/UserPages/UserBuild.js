@@ -95,9 +95,7 @@ class UserBuild extends React.Component {
           <h1 className="title">{currentName}</h1>
           <section className="skill">
             <h2>Skills</h2>
-            <ul>
               <BuildSkillList currentSkills={currentSkills} recSkills={this.state.recSkills} currentName={currentName}/>
-            </ul>
           </section>
           <section className="attributes">
             <h2>{currentName} Attributes</h2>
