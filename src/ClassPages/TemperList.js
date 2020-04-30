@@ -14,7 +14,7 @@ class TemperList extends React.Component {
           {recTempers.map((temper, idx) => {
             return (
               <li key={idx}>
-                <h4>{temper.name}</h4>
+                <h3>{temper.name}</h3>
                 <p>{temper.desc}</p>
               </li>
             )
@@ -27,7 +27,7 @@ class TemperList extends React.Component {
         {tempers.map((temper, idx) => {
           return (
             <li key={idx}>
-                <h4>{temper.name}</h4>
+                <h3>{temper.name}</h3>
                 <p>{temper.desc}</p>
               </li>
           )

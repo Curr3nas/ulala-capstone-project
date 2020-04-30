@@ -84,7 +84,9 @@ class UserBuildSelect extends React.Component {
         <>
         <main className="build">
         <h1>{this.state.userName}'s Builds</h1>
-        <select defaultChecked="Choose a build" onChange={e => this.handleAddBuildSelected(e)}>
+        <form>
+        <label htmlFor="roles">Add a Build</label>
+        <select id="roles" defaultChecked="Choose a build" onChange={e => this.handleAddBuildSelected(e)}>  
           <>
           <option value="choose" hidden>Choose a Build</option>
           {available.map(element => {
@@ -96,6 +98,7 @@ class UserBuildSelect extends React.Component {
             })}
           </>
         </select>
+        </form>
         </main>
         </>
       );

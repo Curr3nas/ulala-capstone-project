@@ -12,7 +12,7 @@ class BuildTemperList extends React.Component {
           {recTempers.map((temper, idx) => {
             return (
               <li key={idx}>
-                <h4>{temper.name}</h4>
+                <h3>{temper.name}</h3>
                 <p>{temper.desc}</p>
               </li>
             )

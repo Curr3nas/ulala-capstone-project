@@ -65,9 +65,9 @@ render() {
           <section>
             <h2>Sign-Up</h2>
             <form onSubmit={ev => this.handleSubmitRegistration(ev)}>
-              <label htmlFor="username">Username: </label>
+              <label htmlFor="userName">Username: </label>
               <input type="text" name="username" id="userName" placeholder="username" />
-              <label htmlFor="password">Password: </label>
+              <label htmlFor="userPassword">Password: </label>
               <input type="password" name="password" id="userPassword" placeholder="password" />
               <button>Submit</button>
             </form>
