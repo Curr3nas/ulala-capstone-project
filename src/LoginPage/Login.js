@@ -1,55 +1,59 @@
-import React from 'react'
-import TokenService from '../Services/token-service'
-import BuildApiService from '../Services/build-api-service'
+import React from 'react';
+import TokenService from '../Services/token-service';
+import BuildApiService from '../Services/build-api-service';
 
-import './Login.css'
+import './Login.css';
 
 class Login extends React.Component {
 
   static defaultProps = {
     onLoginSuccess: () => {}
-  }
+  };
 
   handleSubmitBasicAuth = ev => {
-    ev.preventDefault()
+    ev.preventDefault();
     
-    const { user_name, password } = ev.target
+    const { user_name, password } = ev.target;
     
     TokenService.saveAuthToken(
       TokenService.makeBasicAuthToken(user_name.value, password.value)
-    )
+    );
 
-    this.props.history.push(`/UserBuilds/${user_name.value}`)
+    this.props.history.push(`/UserBuilds/${user_name.value}`);
 
-    user_name.value =''
-    password.value = ''
-    this.props.onLoginSuccess()
+    user_name.value ='';
+    password.value = '';
+    this.props.onLoginSuccess();
 
-  }
+  };
 
   handleSubmitRegistration = ev => {
-    ev.preventDefault() 
+    ev.preventDefault();
 
-    const { userName, userPassword } = ev.target  
+    const { userName, userPassword } = ev.target;
 
     TokenService.saveAuthToken(
       TokenService.makeBasicAuthToken(userName.value, userPassword.value)
-    )
+    );
 
-    BuildApiService.postUser({
-      user_name: userName.value,
-      password: userPassword.value,
-    })
-      .then(user=> {
-        userName.value=''
-        userPassword.value=''
-        this.props.history.push(`/UserBuilds/${user.user_name}`)
+    BuildApiService.postUser({user_name: userName.value,password: userPassword.value,})
+      .catch(err => {
+        if (err) {
+          return Promise.reject
+        };
       })
-  }
+      .then(user=> {
+        userName.value='';
+        userPassword.value='';
+        if (!user.error) {
+          this.props.history.push(`/UserBuilds/${user.user_name}`);
+        };
+      });
+  };
   
 render() {
 
-  const locationState = this.props.location.state
+  const locationState = this.props.location.state;
 
   return (
       <>
@@ -84,8 +88,8 @@ render() {
         </div>
         </main>
       </>
-    )
-  }
-}
+    );
+  };
+};
 
-export default Login
+export default Login;

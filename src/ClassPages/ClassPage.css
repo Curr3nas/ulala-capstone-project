@@ -13,6 +13,21 @@
   align-items: center;
 }
 
+.class .sections .skill ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 75%;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.class .sections .skill ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .skill {
   margin-top: 10px;
   display: flex;
@@ -31,11 +46,19 @@
   margin-top:10px;
 }
 
+.class .sections .attributes ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 75%;
+  flex-wrap: wrap;
+}
+
 .temper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 85%;
+  max-width: 75%;
 }
 
 .temper h2, .temper button {
@@ -47,7 +70,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 85%;
+  max-width: 75%;
 }
 
 .clatter h2, .clatter p, .clatter button {
@@ -62,8 +85,8 @@
 }
 
 .clatter-img {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
 }
 
 .skill button {
@@ -85,4 +108,33 @@
 
 .class .sections ul li p {
   margin-top:5px;
+}
+
+.class .sections .clatter ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 75%;
+  flex-wrap: wrap;
+}
+
+.class .sections #save {
+  margin-top:10px;
+  margin-bottom: 40px;
+}
+
+@media (min-width:800px) {
+  .class .sections .skill ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 75%;
+    list-style: none;
+  }
+  .class .sections .skill ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+  }
 }

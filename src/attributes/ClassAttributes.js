@@ -2,7 +2,7 @@ export let attributes = [
   {
     name: "Agility",
     desc: "Agility affects the ATK, HIT and Impale stats.",
-    statOne: "ATK affects the character's ATK DMG.",
+    statOne: "<b>ATK</b> affects the character's ATK DMG.",
     statTwo: "HIT affects the character's Hit Rate (while confronting an enemy of your level, the primary hit rate is 95%)",
     statThree: "Impale lowers the chance of your atttack being blocked and increases Crit DMG (while confronting an enemy of your level",
   },
@@ -34,7 +34,7 @@ export let attributes = [
     statTwo: "HIT affects the character's Hit Rate (while confronting an enemy of your level, the primary hit rate is 95%)",
     statThree: "Impale lowers the chance of your atttack being blocked and increases Crit DMG (while confronting an enemy of your level",
   }
-]
+];
 
 export let assassinAttributes = [
   {
@@ -61,7 +61,7 @@ export let assassinAttributes = [
     statThree: "Tenacity lowers the chance of being Critically hit and Crit. Dmg taken (while confronting an enemy of your level)",
     allocation: "You should put 2 points per level into this attribute"
   }
-]
+];
 
 export let hunterAttributes = [
   {
@@ -88,7 +88,7 @@ export let hunterAttributes = [
     statThree: "Tenacity lowers the chance of being Critically hit and Crit. Dmg taken (while confronting an enemy of your level)",
     allocation: "You should put 2 points per level into this attribute"
   }
-]
+];
 
 export let druidAttributes = [
   {
@@ -115,7 +115,7 @@ export let druidAttributes = [
     statThree: "Tenacity lowers the chance of being Critically hit and Crit. Dmg taken (while confronting an enemy of your level)",
     allocation: "You should put 2 points per level into this attribute"
   }
-]
+];
 
 export let mageAttributes = [
   {
@@ -142,7 +142,7 @@ export let mageAttributes = [
     statThree: "Tenacity lowers the chance of being Critically hit and Crit. Dmg taken (while confronting an enemy of your level)",
     allocation: "You should put 2 points per level into this attribute"
   }
-]
+];
 
 export let shamanAttributes = [
   {
@@ -169,7 +169,7 @@ export let shamanAttributes = [
     statThree: "Tenacity lowers the chance of being Critically hit and Crit. Dmg taken (while confronting an enemy of your level)",
     allocation: "You should put 2 points per level into this attribute"
   }
-]
+];
 
 export let warlockAttributes = [
   {
@@ -196,7 +196,7 @@ export let warlockAttributes = [
     statThree: "Tenacity lowers the chance of being Critically hit and Crit. Dmg taken (while confronting an enemy of your level)",
     allocation: "You should put 2 points per level into this attribute"
   }
-]
+];
 
 export let gladAttributes = [
   {
@@ -223,7 +223,7 @@ export let gladAttributes = [
     statThree: "Tenacity lowers the chance of being Critically hit and Crit. Dmg taken (while confronting an enemy of your level)",
     allocation: "You should put 2 points per level into this attribute"
   }
-]
+];
 
 export let warriorAttributes = [
   {
@@ -250,4 +250,4 @@ export let warriorAttributes = [
     statThree: "Tenacity lowers the chance of being Critically hit and Crit. Dmg taken (while confronting an enemy of your level)",
     allocation: "You should put 3 points per level into this attribute"
   }
-]
+];

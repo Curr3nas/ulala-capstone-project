@@ -1,20 +1,20 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { assassinSkills, druidSkills, gladSkills, hunterSkills, mageSkills, shamanSkills, warlockSkills, warriorSkills } from '../skills/skills'
-import { assassinAttributes, druidAttributes, gladAttributes, hunterAttributes, mageAttributes, shamanAttributes, warlockAttributes, warriorAttributes } from '../attributes/ClassAttributes'
-import BuildTemperList from './BuildTemperList'
-import BuildSkillList from './BuildSkillList'
-import BuildClatterList from './BuildClatterList'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { assassinSkills, druidSkills, gladSkills, hunterSkills, mageSkills, shamanSkills, warlockSkills, warriorSkills } from '../skills/skills';
+import { assassinAttributes, druidAttributes, gladAttributes, hunterAttributes, mageAttributes, shamanAttributes, warlockAttributes, warriorAttributes } from '../attributes/ClassAttributes';
+import BuildTemperList from './BuildTemperList';
+import BuildSkillList from './BuildSkillList';
+import BuildClatterList from './BuildClatterList';
 
+import '../ClassPages/ClassPage.css';
 
-import '../ClassPages/ClassPage.css'
 class UserBuild extends React.Component {
 
   state = {
     skills: [],
     name: "",
     attributes: []
-  }
+  };
 
   componentDidMount = () => {
     if(this.props.match.params.build === "Assassin") {
@@ -22,70 +22,70 @@ class UserBuild extends React.Component {
         skills: assassinSkills,
         name: "Assassin",
         attributes: assassinAttributes
-      })
-    }
+      });
+    };
 
     if(this.props.match.params.build === "Druid") {
       this.setState({
         skills: druidSkills,
         name: "Druid",
         attributes: druidAttributes
-      })
-    }
+      });
+    };
 
     if(this.props.match.params.build === "Hunter") {
       this.setState({
         skills: hunterSkills,
         name: "Hunter",
         attributes: hunterAttributes
-      })
-    }
+      });
+    };
 
     if(this.props.match.params.build === "Shaman") {
       this.setState({
         skills: shamanSkills,
         name: "Shaman",
         attributes: shamanAttributes
-      })
-    }
+      });
+    };
 
     if(this.props.match.params.build === "Gladiator") {
       this.setState({
         skills: gladSkills,
         name: "Gladiator",
         attributes: gladAttributes
-      })
-    }
+      });
+    };
 
     if(this.props.match.params.build === "Warlock") {
       this.setState({
         skills: warlockSkills,
         name: "Warlock",
         attributes: warlockAttributes
-      })
-    }
+      });
+    };
 
     if(this.props.match.params.build === "Warrior") {
       this.setState({
         skills: warriorSkills,
         name: "Warrior",
         attributes: warriorAttributes
-      })
-    }
+      });
+    };
 
     if(this.props.match.params.build === "Mage") {
       this.setState({
         skills: mageSkills,
         name: "Mage",
         attributes: mageAttributes
-      })
-    }
-  } 
+      });
+    };
+  } ;
 
   render() {
-    let currentSkills = this.state.skills
-    let currentName = this.state.name
-    let currentAttributes = this.state.attributes
+    let currentSkills = this.state.skills;
+    let currentName = this.state.name;
+    let currentAttributes = this.state.attributes;
     let back= `/UserBuilds/${this.props.match.params.user_name}`;
 
     return (
@@ -108,7 +108,7 @@ class UserBuild extends React.Component {
                     <h3>{attribute.name}</h3>
                     <p>{attribute.allocation}</p>
                   </li>
-                )
+                );
               })}
             </ul>
           </section>
@@ -128,8 +128,8 @@ class UserBuild extends React.Component {
         </div>
         </main>
       </>
-    )
-  }
-}
+    );
+  };
+};
 
-export default UserBuild
+export default UserBuild;

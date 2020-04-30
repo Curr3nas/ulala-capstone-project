@@ -1,16 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import assassin from '../ulala-media/class-images/assassin.png'
-import hunter from '../ulala-media/class-images/hunter.png'
-import mage from '../ulala-media/class-images/mage.png'
-import warlock from '../ulala-media/class-images/warlock.png'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import assassin from '../ulala-media/class-images/assassin.png';
+import hunter from '../ulala-media/class-images/hunter.png';
+import mage from '../ulala-media/class-images/mage.png';
+import warlock from '../ulala-media/class-images/warlock.png';
 
-import './ClassSelect.css'
+import './ClassSelect.css';
 
 function Dps() {
   return (
     <>
-      <main className="choices">
+      <main className="dps">
         <header>
           <h1>Choose Your Class</h1>
         </header>
@@ -38,7 +38,7 @@ function Dps() {
         </div>
       </main>
     </>
-  )
-}
+  );
+};
 
-export default Dps
+export default Dps;

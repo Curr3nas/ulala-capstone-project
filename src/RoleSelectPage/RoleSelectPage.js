@@ -1,9 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Warrior from '../ulala-media/class-images/warrior.png'
-import Healer from '../ulala-media/class-images/shaman.png'
-import Dps from '../ulala-media/class-images/assassin.png'
-import './RoleSelectPage.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Warrior from '../ulala-media/class-images/warrior.png';
+import Healer from '../ulala-media/class-images/shaman.png';
+import Dps from '../ulala-media/class-images/assassin.png';
+import './RoleSelectPage.css';
 
 function RoleSelectPage() {
   return (
@@ -31,7 +31,7 @@ function RoleSelectPage() {
         </div>
       </main>
     </>
-  )
-}
+  );
+};
 
-export default RoleSelectPage
+export default RoleSelectPage;

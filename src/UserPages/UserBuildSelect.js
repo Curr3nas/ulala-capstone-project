@@ -1,9 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import BuildApiService from '../Services/build-api-service'
-import TokenService from '../Services/token-service'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import BuildApiService from '../Services/build-api-service';
+import TokenService from '../Services/token-service';
 
-import './UserBuildSelect.css'
+import './UserBuildSelect.css';
 
 class UserBuildSelect extends React.Component {
   
@@ -11,7 +11,7 @@ class UserBuildSelect extends React.Component {
     userName: '',
     classes: '',
     checked: false
-  }
+  };
 
   // make get request when component mounts
 
@@ -22,64 +22,62 @@ class UserBuildSelect extends React.Component {
           TokenService.clearAuthToken();
           this.props.history.push('/Login', {reason: "Invalid Credentials"})
           return Promise.reject()
-        }
+        };
       }) 
       .then(res => {
         this.setState({
           userName: res.user_name,
           classes: res.classes
-      })
-
-    })
-  }
+      });
+    });
+  };
 
   handleAddBuildSelected = e => {
-    e.preventDefault()
+    e.preventDefault();
     
     if(this.state.classes === "") {
       this.setState({
         classes: e.target.value
-      })
+      });
     } else {
       this.setState({
         classes: this.state.classes + ', ' + e.target.value
-      })
-    }
+      });
+    };
 
-    const build = e.target.value
+    const build = e.target.value;
 
-    BuildApiService.postBuild(this.state.userName, build)
+    BuildApiService.postBuild(this.state.userName, build);
 
-    e.target.value = "Choose a Build"
-  }
+    e.target.value = "Choose a Build";
+  };
 
   handleDeleteBuildClicked = (e, item) => {
-    e.preventDefault()
-    const classes = this.state.classes.split(', ')
-    console.log(classes)
-    const newClassesArray = classes.filter(build => build !== item)
-    let newClassesString
+    e.preventDefault();
+    const classes = this.state.classes.split(', ');
+    const newClassesArray = classes.filter(build => build !== item);
+    let newClassesString;
     for (let i= 0; i < newClassesArray.length; i++) {
       if (!newClassesString) {
-        newClassesString = newClassesArray[i]
+        newClassesString = newClassesArray[i];
       } else {
-        newClassesString = newClassesString + ', ' + newClassesArray[i]
-      }
-    }
+        newClassesString = newClassesString + ', ' + newClassesArray[i];
+      };
+    };
 
     this.setState({
       classes: newClassesString
-    })
+    });
 
-    BuildApiService.deleteBuild(this.state.userName, newClassesString)
-  }
+    BuildApiService.deleteBuild(this.state.userName, newClassesString);
+  };
 
   render() {
-    let classes = this.state.classes.split(', ')
-    let options = ["Assassin", "Druid", "Gladiator", "Hunter", "Mage", "Shaman", "Warlock", "Warrior"]
-    let available = options.filter(option => !classes.includes(option))
-    let source
-    let link
+    let classes = this.state.classes.split(', ');
+    let options = ["Assassin", "Druid", "Gladiator", "Hunter", "Mage", "Shaman", "Warlock", "Warrior"];
+    let available = options.filter(option => !classes.includes(option));
+    let source;
+    let link;
 
     if (this.state.classes === "" || this.state.classes === null || this.state.classes === undefined) {
       return (
@@ -94,13 +92,13 @@ class UserBuildSelect extends React.Component {
               <>
               <option value={element}>{element}</option>
               </>
-            )
+            );
             })}
           </>
         </select>
         </main>
         </>
-      )
+      );
   } else {
     return (
       <>
@@ -114,7 +112,7 @@ class UserBuildSelect extends React.Component {
             <>
             <option value={element}>{element}</option>
             </>
-          )
+          );
           })}
         </>
       </select>
@@ -127,13 +125,13 @@ class UserBuildSelect extends React.Component {
           <Link to={link}><img id="image" src={source} alt={item}></img></Link>
           <button onClick={e => this.handleDeleteBuildClicked(e, item)}>Delete</button>
           </>
-        )
+        );
       })}
       </main>
       </>
-    )
-  }
-  }
-}
+    );
+  };
+  };
+};
 
-export default UserBuildSelect
+export default UserBuildSelect;

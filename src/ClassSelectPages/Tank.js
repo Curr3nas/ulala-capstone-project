@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Warrior from '../ulala-media/class-images/warrior.png'
-import gladiator from '../ulala-media/class-images/gladiator.png'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Warrior from '../ulala-media/class-images/warrior.png';
+import gladiator from '../ulala-media/class-images/gladiator.png';
 import './ClassSelect.css'
 
 function Tank() {
@@ -25,7 +25,7 @@ function Tank() {
         </div>
       </main>
     </>
-  )
-}
+  );
+};
 
-export default Tank
+export default Tank;

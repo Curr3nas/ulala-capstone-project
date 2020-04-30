@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './StartPage.css'
+import './StartPage.css';
 
 function StartPage() {
 
@@ -34,7 +34,7 @@ function StartPage() {
       <img src="../ulala-media/logos-and-backgrounds/logos.png" alt="X.D. Global and So Funny company logos."></img>
     </footer>
   </div>
-  )
-}
+  );
+};
 
-export default StartPage
+export default StartPage;

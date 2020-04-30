@@ -1,19 +1,19 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { assassinSkills, druidSkills, gladSkills, hunterSkills, mageSkills, shamanSkills, warlockSkills, warriorSkills } from '../skills/skills'
-import SkillList from './SkillList'
-import ClatterList from './ClatterList'
-import { assassinAttributes, druidAttributes, gladAttributes, hunterAttributes, mageAttributes, shamanAttributes, warlockAttributes, warriorAttributes } from '../attributes/ClassAttributes'
-import TemperList from './TemperList'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { assassinSkills, druidSkills, gladSkills, hunterSkills, mageSkills, shamanSkills, warlockSkills, warriorSkills } from '../skills/skills';
+import SkillList from './SkillList';
+import ClatterList from './ClatterList';
+import { assassinAttributes, druidAttributes, gladAttributes, hunterAttributes, mageAttributes, shamanAttributes, warlockAttributes, warriorAttributes } from '../attributes/ClassAttributes';
+import TemperList from './TemperList';
 
-import './ClassPage.css'
+import './ClassPage.css';
 
 class ClassPage extends React.Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props)
-  }
+  };
   
   state = {
     skills: [],
@@ -22,7 +22,7 @@ class ClassPage extends React.Component {
     recSkills: false,
     recTempers: false,
     recClatters: false
-  }
+  };
 
   componentDidMount = () => {
     if(this.props.location.pathname === "/Assassin") {
@@ -30,91 +30,91 @@ class ClassPage extends React.Component {
         skills: assassinSkills,
         name: "Assassin",
         attributes: assassinAttributes
-      })
-    }
+      });
+    };
 
     if(this.props.location.pathname === "/Druid") {
       this.setState({
         skills: druidSkills,
         name: "Druid",
         attributes: druidAttributes
-      })
-    }
+      });
+    };
 
     if(this.props.location.pathname === "/Hunter") {
       this.setState({
         skills: hunterSkills,
         name: "Hunter",
         attributes: hunterAttributes
-      })
-    }
+      });
+    };
 
     if(this.props.location.pathname === "/Shaman") {
       this.setState({
         skills: shamanSkills,
         name: "Shaman",
         attributes: shamanAttributes
-      })
-    }
+      });
+    };
 
     if(this.props.location.pathname === "/Gladiator") {
       this.setState({
         skills: gladSkills,
         name: "Gladiator",
         attributes: gladAttributes
-      })
-    }
+      });
+    };
 
     if(this.props.location.pathname === "/Warlock") {
       this.setState({
         skills: warlockSkills,
         name: "Warlock",
         attributes: warlockAttributes
-      })
-    }
+      });
+    };
 
     if(this.props.location.pathname === "/Warrior") {
       this.setState({
         skills: warriorSkills,
         name: "Warrior",
         attributes: warriorAttributes
-      })
-    }
+      });
+    };
 
     if(this.props.location.pathname === "/Mage") {
       this.setState({
         skills: mageSkills,
         name: "Mage",
         attributes: mageAttributes
-      })
-    }
-  } 
+      });
+    };
+  };
 
   handleRecSkillsClicked = (e) => {
     e.preventDefault()
     this.setState({
       recSkills: !this.state.recSkills
     });
-  }
+  };
 
   handleRecTempersClicked = (e) => {
     e.preventDefault()
     this.setState({
       recTempers: !this.state.recTempers
-    })
-  }
+    });
+  };
 
   handleRecClattersClicked = (e) => {
     e.preventDefault()
     this.setState({
       recClatters: !this.state.recClatters
-    })
-  }
+    });
+  };
 
   render() {
-    let currentSkills = this.state.skills
-    let currentName = this.state.name
-    let currentAttributes = this.state.attributes
+    let currentSkills = this.state.skills;
+    let currentName = this.state.name;
+    let currentAttributes = this.state.attributes;
 
     return (
       <>
@@ -124,16 +124,14 @@ class ClassPage extends React.Component {
           <section className="skill">
             <h2>Skills</h2>
             <button className="recommended" onClick={e => {this.handleRecSkillsClicked(e)}}>Recommended Only</button>
-            <ul>
-              <SkillList currentSkills={currentSkills} recSkills={this.state.recSkills} currentName={currentName}/>
-            </ul>
+            <SkillList currentSkills={currentSkills} recSkills={this.state.recSkills} currentName={currentName}/>
           </section>
           <section className="attributes">
             <h2>{currentName} Attributes</h2>
             <ul>
-              {currentAttributes.map(attribute => {
+              {currentAttributes.map((attribute, idx) => {
                 return (
-                  <li>
+                  <li key={idx}>
                     <h3>{attribute.name}</h3>
                     <p>{attribute.desc}</p>
                     <ul>
@@ -167,12 +165,12 @@ class ClassPage extends React.Component {
               <ClatterList currentName={currentName} recClatters={this.state.recClatters}/>
             </ul>
           </section>
-          <Link to='/Login'><button>Save Build</button></Link>
+          <Link to='/Login'><button id="save">Save Build</button></Link>
         </div>
         </main>
       </>
-    )
-  }
-}
+    );
+  };
+};
 
-export default ClassPage
+export default ClassPage;

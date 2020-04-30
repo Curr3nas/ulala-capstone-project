@@ -13,6 +13,7 @@ class SkillList extends React.Component {
       return (
         <>
           <h2>Hunt Skills</h2>
+          <ul>
           {huntSkills.map((skill, idx) => {
             if (skill.type) {
               return (
@@ -35,7 +36,9 @@ class SkillList extends React.Component {
               )
             }
           })}
+          </ul>
           <h2>AFK Skills</h2>
+          <ul>
           {afkSkills.map((skill, idx) => {
             if (skill.type) {
               return (
@@ -58,7 +61,9 @@ class SkillList extends React.Component {
               )
             }
           })}
+          </ul>
           <h2>AOE Skills</h2>
+          <ul>
           {aoeSkills.map((skill, idx) => {
             if (skill.type) {
               return (
@@ -81,11 +86,13 @@ class SkillList extends React.Component {
               )
             }
           })}
+          </ul>
         </>
       )
     } else {
       return (
         <>
+        <ul>
           {this.props.currentSkills.map((skill, idx) => {
             if (skill.type) {
               return (
@@ -109,6 +116,7 @@ class SkillList extends React.Component {
             }
           })
           }
+          </ul>
         </>
       )
     }

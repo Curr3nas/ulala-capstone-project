@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import shaman from '../ulala-media/class-images/shaman.png'
-import druid from '../ulala-media/class-images/druid.png'
-import './ClassSelect.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import shaman from '../ulala-media/class-images/shaman.png';
+import druid from '../ulala-media/class-images/druid.png';
+import './ClassSelect.css';
 
 function Healer() {
   return (
@@ -25,7 +25,7 @@ function Healer() {
         </div>
       </main>
     </>
-  )
-}
+  );
+};
 
-export default Healer
+export default Healer;

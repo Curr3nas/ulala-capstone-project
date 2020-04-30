@@ -2,3 +2,47 @@
   height: 400px;
   width: 250px
 }
+
+.dps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eee8aa;
+  color: #A33117;
+  min-height: 100vh;
+}
+
+.dps header {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.dps .sections section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.dps p {
+  max-width: 85%;
+  margin-top: 20px;
+}
+
+.dps h2 {
+  margin-bottom: 15px;
+}
+@media (min-width: 800px){
+  .dps .sections {
+    display: flex;
+    max-width: 75%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .dps .sections section {
+    width: 35%;
+  }
+}
+
+
