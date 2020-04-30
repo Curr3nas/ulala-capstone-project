@@ -107,6 +107,8 @@ class UserBuildSelect extends React.Component {
       <>
       <main className="build">
       <h1>{this.state.userName}'s Builds</h1>
+      <form>
+      <label htmlFor="roles">Add a Build</label>
       <select defaultChecked="Choose a build" onChange={e => this.handleAddBuildSelected(e)}>
         <>
         <option value="choose" hidden>Choose a Build</option>
@@ -119,6 +121,7 @@ class UserBuildSelect extends React.Component {
           })}
         </>
       </select>
+      </form>
       {classes.map(item => {
         source = `../ulala-media/class-images/${item.toLowerCase()}.png`
         link =`/UserBuilds/${this.state.userName}/${item}`
