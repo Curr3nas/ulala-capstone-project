@@ -18,16 +18,19 @@ class ClatterList extends React.Component {
     return (
       <>
       <p>Pick any combination of these cards to get 6 Giant Jaw and 3 Flying Wings</p>
+        <ul>
         {dpsClatters.map((clatter, idx) => {
           let source = `../../${clatter.img}`
             return (
-              <li key={idx}>
-                <h3>{clatter.name}</h3>
-                <img src={source} alt={clatter.name} className="clatter-img"></img>
-              </li>
-              
+ 
+                <li key={idx}>
+                  <h3>{clatter.name}</h3>
+                  <img src={source} alt={clatter.name} className="clatter-img"></img>
+                </li>
+
             )
             })}
+            </ul>
       </>
     )
     } else if (healer.includes(this.props.currentName)) {

@@ -32,3 +32,15 @@ HTML, CSS, JSX, JavaScript, NodeJS, NPM, React, React Router, Postgrator, and Kn
 
 #### Role Select
 ![Role Select Screenshot](./src/ulala-media/screenshots/roleselect.png)
+
+#### Class Select
+![Class Select Screenshot](./src/ulala-media/screenshots/classselect.png)
+
+#### Login/Register
+![Login Page Screenshot](./src/ulala-media/screenshots/login.png)
+
+#### Build Select
+![Build Select Page](./src/ulala-media/screenshots/buildselect.png)
+
+#### User Build
+![User Build Page](./src/ulala-media/screenshots/userbuild.png)

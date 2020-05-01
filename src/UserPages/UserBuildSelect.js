@@ -122,17 +122,21 @@ class UserBuildSelect extends React.Component {
         </>
       </select>
       </form>
+      <div className="classes">
       {classes.map(item => {
         source = `../ulala-media/class-images/${item.toLowerCase()}.png`
         link =`/UserBuilds/${this.state.userName}/${item}`
         return (
           <>
+          <section>
           <h2>{item}</h2>
           <Link to={link}><img id="image" src={source} alt={item}></img></Link>
           <button onClick={e => this.handleDeleteBuildClicked(e, item)}>Delete</button>
+          </section>
           </>
         );
       })}
+      </div>
       </main>
       </>
     );

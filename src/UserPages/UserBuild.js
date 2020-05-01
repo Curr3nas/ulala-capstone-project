@@ -118,9 +118,7 @@ class UserBuild extends React.Component {
           </section>
           <section className="clatter">
             <h2>Clatter Cards</h2>
-            <ul>
               <BuildClatterList currentName={currentName} />
-            </ul>
           </section>
           <Link to={back}><button>Back to Builds</button></Link>
         </div>
