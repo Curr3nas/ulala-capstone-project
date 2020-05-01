@@ -28,6 +28,7 @@ HTML, CSS, JSX, JavaScript, NodeJS, NPM, React, React Router, Postgrator, and Kn
 ### Screenshots
 
 #### Start Page
-![Start Page Screenshot](C:\Users\curr3\projects\first-capstone\src\ulala-media\screenshots)
+![Start Page Screenshot](./src/ulala-media/screenshots/startpage.png)
 
 #### Role Select
+![Role Select Screenshot](./src/ulala-media/screenshots/roleselect.png)
