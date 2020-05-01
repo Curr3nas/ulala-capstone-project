@@ -23,14 +23,11 @@ damage/healing/mitigation calculator that will spit out the best skills for you 
 order you should use them in.
 
 ### Tech I used in this project includes:
-HTML
-CSS
-JSX
-JavaScript
-NodeJS
-NPM
-React
-React Router
-Postgrator
-Knex
+HTML, CSS, JSX, JavaScript, NodeJS, NPM, React, React Router, Postgrator, and Knex
 
+### Screenshots
+
+#### Start Page
+![Start Page Screenshot](C:\Users\curr3\projects\first-capstone\src\ulala-media\screenshots)
+
+#### Role Select

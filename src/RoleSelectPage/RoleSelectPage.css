@@ -22,6 +22,10 @@
 @media (min-width:800px) {
   .choices .sections {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    max-width: 75%;
+  }
+  .choices .sections section {
+    width: 25%
   }
 }
