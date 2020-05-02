@@ -8,6 +8,8 @@ import BuildClatterList from './BuildClatterList';
 
 import '../ClassPages/ClassPage.css';
 
+
+
 class UserBuild extends React.Component {
 
   state = {

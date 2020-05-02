@@ -1,6 +1,9 @@
 import React from 'react'
 import { clatters } from '../clatters/clatters'
 
+/**@class ClatterList component filters the clatter cards based off of the selected classes role. 
+ * then displays either the full list or the filtered list depending on if the user has clicked the "recommended only" button */
+
 class ClatterList extends React.Component {
   render () {
 

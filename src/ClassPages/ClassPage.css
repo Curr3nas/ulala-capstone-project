@@ -145,8 +145,38 @@
   .class .sections .clatter ul {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+    width: 85%;
+    list-style: none;
+  }
+  .class .sections .clatter ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+  }
+  .class .sections .attributes ul {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     max-width: 85%;
+    list-style: none;
+  }
+  .class .sections .attributes ul li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 25%;
+    list-style: none;
+  }
+}
+
+@media (min-width:1200px) {
+  .class .sections .clatter ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 85%;
     list-style: none;
   }
   .class .sections .clatter ul li {
@@ -155,5 +185,4 @@
     align-items: center;
     width: 25%;
   }
-
 }

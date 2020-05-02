@@ -1,6 +1,9 @@
 import React from 'react'
 import { tempers } from '../Tempers/Tempers'
 
+/**@class TemperList component filters the tempers based off of the selected classes role. 
+ * then displays either the full list or the filtered list depending on if the user has clicked the "recommended only" button */
+
 class TemperList extends React.Component {
   render () {
     let recTempers

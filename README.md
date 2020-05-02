@@ -1,4 +1,6 @@
-# Welcome to my new players guide to the mobile game Ulala: Idle Adventure!
+# Ulala: Idle Adventure Guide
+
+## Welcome to my new players guide to the mobile game Ulala: Idle Adventure!
 
 https://ulala-guide.now.sh/
 
@@ -22,9 +24,6 @@ the ability to provide your current skills that you have in the game, and runnin
 damage/healing/mitigation calculator that will spit out the best skills for you to use, and ideally, what
 order you should use them in.
 
-### Tech I used in this project includes:
-HTML, CSS, JSX, JavaScript, NodeJS, NPM, React, React Router, Postgrator, and Knex
-
 ### Screenshots
 
 #### Start Page
@@ -44,3 +43,7 @@ HTML, CSS, JSX, JavaScript, NodeJS, NPM, React, React Router, Postgrator, and Kn
 
 #### User Build
 ![User Build Page](./src/ulala-media/screenshots/userbuild.png)
+
+### Tech I used in this project includes:
+HTML, CSS, JSX, JavaScript, NodeJS, NPM, React, React Router, Postgrator, and Knex
+

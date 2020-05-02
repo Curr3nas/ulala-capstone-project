@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './StartPage.css';
 
+/**@StartPage Landing page for the app. gives a brief description, and has a link to the role select component */
+
 function StartPage() {
 
   return (

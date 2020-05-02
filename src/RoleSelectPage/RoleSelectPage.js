@@ -5,6 +5,8 @@ import Healer from '../ulala-media/class-images/shaman.png';
 import Dps from '../ulala-media/class-images/assassin.png';
 import './RoleSelectPage.css';
 
+/** @RoleSelectPage This component displays the three different roles, explains the difference between them, and provides a link to the class select page that corresponds to each role.*/ 
+
 function RoleSelectPage() {
   return (
     <>

@@ -9,6 +9,10 @@ import TemperList from './TemperList';
 
 import './ClassPage.css';
 
+/**@class ClassPage component that displays all the relevant information about the selected class. Upon mounting, sets the state to the appropriate class name, skills and attributes to enable the
+ * functionality of the filter buttons.
+ */
+
 class ClassPage extends React.Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {

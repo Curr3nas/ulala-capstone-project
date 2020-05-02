@@ -4,6 +4,8 @@ import Warrior from '../ulala-media/class-images/warrior.png';
 import gladiator from '../ulala-media/class-images/gladiator.png';
 import './ClassSelect.css'
 
+/**@Tank Component that displays the available classes per the Tank role, selected on previous component. Each image provides a link to the respective Class Page */
+
 function Tank() {
   return (
     <>

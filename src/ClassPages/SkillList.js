@@ -1,5 +1,8 @@
 import React from 'react'
 
+/**@class SkillList component filters the skills into 3 recommended areas, single target Hunt, AOE(area of effect) damage, or AFK trash. 
+ * then displays either the full list of skills or the filtered list depending on if the user has clicked the "recommended only" button */
+
 class SkillList extends React.Component {
 
   render() {

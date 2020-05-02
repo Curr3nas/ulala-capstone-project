@@ -4,6 +4,8 @@ import shaman from '../ulala-media/class-images/shaman.png';
 import druid from '../ulala-media/class-images/druid.png';
 import './ClassSelect.css';
 
+/**@Healer Component that displays the available classes per the Healer role, selected on previous component. Each image provides a link to the respective Class Page */
+
 function Healer() {
   return (
     <>

@@ -10,6 +10,7 @@ import Login from './LoginPage/Login'
 import UserBuildSelect from './UserPages/UserBuildSelect'
 import UserBuild from './UserPages/UserBuild'
 
+/**@class App  main component of the app. displays all the routes */
 
 class App extends React.Component {
   

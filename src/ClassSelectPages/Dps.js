@@ -7,6 +7,8 @@ import warlock from '../ulala-media/class-images/warlock.png';
 
 import './ClassSelect.css';
 
+/**@Dps Component that displays the available classes per the DPS role, selected on previous component. Each image provides a link to the respective Class Page */
+
 function Dps() {
   return (
     <>
