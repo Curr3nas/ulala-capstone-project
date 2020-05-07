@@ -10,6 +10,11 @@ class Login extends React.Component {
     onLoginSuccess: () => {}
   };
 
+  state = {
+    signupError: null,
+    loginError: null
+  }
+
   handleSubmitBasicAuth = ev => {
     ev.preventDefault();
     
@@ -17,7 +22,7 @@ class Login extends React.Component {
     
     TokenService.saveAuthToken(
       TokenService.makeBasicAuthToken(user_name.value, password.value)
-    );
+    )
 
     this.props.history.push(`/UserBuilds/${user_name.value}`);
 
@@ -39,10 +44,15 @@ class Login extends React.Component {
     BuildApiService.postUser({user_name: userName.value,password: userPassword.value,})
       .catch(err => {
         if (err) {
-          return Promise.reject
+          console.log(err.error)
+          this.setState({
+            signupError: err.error
+          })
+          return err
         };
       })
-      .then(user=> {
+      .then(user => {
+        console.log(user)
         userName.value='';
         userPassword.value='';
         if (!user.error) {
@@ -64,6 +74,7 @@ render() {
         <div className="signup">
           <section>
             <h2>Sign-Up</h2>
+            {this.state.signupError && <p>{this.state.signupError}</p>}
             <form onSubmit={ev => this.handleSubmitRegistration(ev)}>
               <label htmlFor="userName">Username: </label>
               <input type="text" name="username" id="userName" placeholder="username" />
@@ -76,7 +87,7 @@ render() {
         <div className="login">
           <section>
             <h2>Login</h2>
-            {locationState && <p>{this.props.location.state.reason}</p>}
+            {locationState && !this.state.signupError && <p>{this.props.location.state.reason}</p>}
             <form onSubmit={ev => this.handleSubmitBasicAuth(ev)}>
               <label htmlFor="user_name">Username: </label>
               <input type="text" id="user_name" placeholder="username" />
