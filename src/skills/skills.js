@@ -1,3 +1,5 @@
+/**@let This module contains the skill objects held in arrays by class to be used in other modules */
+
 export let assassinSkills = [
   {
     name: "Reckless Lunge",

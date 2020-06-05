@@ -1,3 +1,6 @@
+
+// this module holds all of the attributes for every class, including the recommended variants
+
 export let attributes = [
   {
     name: "Agility",

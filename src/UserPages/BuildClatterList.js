@@ -1,6 +1,9 @@
 import React from 'react'
 import { clatters } from '../clatters/clatters'
 
+/**@class BuildClatterList provides the "recommended Clatters" list for use in the UserBuild page */
+
+
 class ClatterList extends React.Component {
   render () {
 

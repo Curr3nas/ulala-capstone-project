@@ -1,3 +1,5 @@
+// This module holds the clatter objects for use in other modules
+
 export let clatters = [
   {
     name: "Velociraptor",

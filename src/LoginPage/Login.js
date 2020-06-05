@@ -4,6 +4,10 @@ import BuildApiService from '../Services/build-api-service';
 
 import './Login.css';
 
+/**@class Login module handles making the basic auth token and storing
+ * it in the browser as well as handing the registration process.
+ */
+
 class Login extends React.Component {
 
   static defaultProps = {

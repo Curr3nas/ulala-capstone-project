@@ -1,6 +1,8 @@
 import React from 'react';
 import { tempers } from '../Tempers/Tempers';
 
+/**@class BuildTemperList provides the "recommended tempers" list for use in the UserBuild page */
+
 class BuildTemperList extends React.Component {
   render () {
     let recTempers = tempers.filter(temper => {

@@ -1,5 +1,8 @@
 import React from 'react'
 
+/**@class BuildSkillList provides the "recommended Skills" list for use in the UserBuild page */
+
+
 class BuildSkillList extends React.Component {
 
   render() {

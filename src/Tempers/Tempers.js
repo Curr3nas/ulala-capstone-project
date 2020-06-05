@@ -1,3 +1,5 @@
+/**@tempers this module contains the temper objects held in an array, to be used in other modules */
+
 export let tempers = [
   {
     name: "ATK",

@@ -1,6 +1,8 @@
 import config from '../config'
 import TokenService from './token-service'
 
+/**@BuildApiService this module is responsible for all of the api calls to the server.*/
+
 const BuildApiService = {
   getUserBuild(user_name) {
     return fetch(`${config.API_ENDPOINT}/UserBuilds/${user_name}`, {

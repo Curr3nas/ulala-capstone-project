@@ -8,7 +8,9 @@ import BuildClatterList from './BuildClatterList';
 
 import '../ClassPages/ClassPage.css';
 
-
+/**@class UserBuild displays a condensed version of the "class page" as a quick reference guide
+ * to the recommended features for the selected class. Links back to the UserBuildSelect page.
+ */
 
 class UserBuild extends React.Component {
 

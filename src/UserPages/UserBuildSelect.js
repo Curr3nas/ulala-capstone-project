@@ -5,6 +5,11 @@ import TokenService from '../Services/token-service';
 
 import './UserBuildSelect.css';
 
+/**@class UserBuildSelect displays the appropriate builds for each user based on the
+ * information provided by the API calls to the database. Each build links to a prebuilt
+ * "quick reference" guide for the selected class.
+ */
+
 class UserBuildSelect extends React.Component {
   
   state = {
