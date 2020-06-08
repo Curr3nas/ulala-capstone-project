@@ -52,8 +52,7 @@ class UserBuildSelect extends React.Component {
 
     const build = e.target.value;
 
-    BuildApiService.postBuild(this.state.userName, build);
-
+    BuildApiService.postBuild(this.state.userName, build).then(res => console.log(res))
     e.target.value = "Choose a Build";
   };
 
@@ -94,10 +93,10 @@ class UserBuildSelect extends React.Component {
         <select id="roles" defaultChecked="Choose a build" onChange={e => this.handleAddBuildSelected(e)}>  
           <>
           <option value="choose" hidden>Choose a Build</option>
-          {available.map(element => {
+          {available.map((element, idx) => {
             return (
               <>
-              <option value={element}>{element}</option>
+              <option value={element} key={idx}>{element}</option>
               </>
             );
             })}
@@ -117,10 +116,10 @@ class UserBuildSelect extends React.Component {
       <select defaultChecked="Choose a build" onChange={e => this.handleAddBuildSelected(e)}>
         <>
         <option value="choose" hidden>Choose a Build</option>
-        {available.map(element => {
+        {available.map((element, idx) => {
           return (
             <>
-            <option value={element}>{element}</option>
+            <option value={element} key={idx}>{element}</option>
             </>
           );
           })}

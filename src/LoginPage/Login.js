@@ -28,6 +28,8 @@ class Login extends React.Component {
       TokenService.makeBasicAuthToken(user_name.value, password.value)
     )
 
+    console.log('something')
+
     this.props.history.push(`/UserBuilds/${user_name.value}`);
 
     user_name.value ='';
