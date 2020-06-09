@@ -28,14 +28,11 @@ class Login extends React.Component {
       TokenService.makeBasicAuthToken(user_name.value, password.value)
     )
 
-    console.log('something')
-
     this.props.history.push(`/UserBuilds/${user_name.value}`);
 
     user_name.value ='';
     password.value = '';
     this.props.onLoginSuccess();
-
   };
 
   handleSubmitRegistration = ev => {
@@ -50,7 +47,6 @@ class Login extends React.Component {
     BuildApiService.postUser({user_name: userName.value,password: userPassword.value,})
       .catch(err => {
         if (err) {
-          console.log(err.error)
           this.setState({
             signupError: err.error
           })
@@ -58,7 +54,6 @@ class Login extends React.Component {
         };
       })
       .then(user => {
-        console.log(user)
         userName.value='';
         userPassword.value='';
         if (!user.error) {

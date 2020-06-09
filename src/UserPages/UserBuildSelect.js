@@ -52,7 +52,7 @@ class UserBuildSelect extends React.Component {
 
     const build = e.target.value;
 
-    BuildApiService.postBuild(this.state.userName, build).then(res => console.log(res))
+    BuildApiService.postBuild(this.state.userName, build)
     e.target.value = "Choose a Build";
   };
 
