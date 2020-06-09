@@ -1,6 +1,5 @@
 import React from 'react';
 import TokenService from '../Services/token-service';
-import BuildApiService from '../Services/build-api-service';
 
 import './Login.css';
 
@@ -35,32 +34,7 @@ class Login extends React.Component {
     this.props.onLoginSuccess();
   };
 
-  handleSubmitRegistration = ev => {
-    ev.preventDefault();
-
-    const { userName, userPassword } = ev.target;
-
-    TokenService.saveAuthToken(
-      TokenService.makeBasicAuthToken(userName.value, userPassword.value)
-    );
-
-    BuildApiService.postUser({user_name: userName.value,password: userPassword.value,})
-      .catch(err => {
-        if (err) {
-          this.setState({
-            signupError: err.error
-          })
-          return err
-        };
-      })
-      .then(user => {
-        userName.value='';
-        userPassword.value='';
-        if (!user.error) {
-          this.props.history.push(`/UserBuilds/${user.user_name}`);
-        };
-      });
-  };
+  
   
 render() {
 
@@ -70,24 +44,11 @@ render() {
       <>
       <main className="login-page">
         <header>
-          <h1>Sign-Up/Login</h1>
+          <h1>Login</h1>
         </header>
-        <div className="signup">
-          <section>
-            <h2>Sign-Up</h2>
-            {this.state.signupError && <p>{this.state.signupError}</p>}
-            <form onSubmit={ev => this.handleSubmitRegistration(ev)}>
-              <label htmlFor="userName">Username: </label>
-              <input type="text" name="username" id="userName" placeholder="username" />
-              <label htmlFor="userPassword">Password: </label>
-              <input type="password" name="password" id="userPassword" placeholder="password" />
-              <button>Submit</button>
-            </form>
-          </section>
-        </div>
+
         <div className="login">
           <section>
-            <h2>Login</h2>
             {locationState && !this.state.signupError && <p>{this.props.location.state.reason}</p>}
             <form onSubmit={ev => this.handleSubmitBasicAuth(ev)}>
               <label htmlFor="user_name">Username: </label>
